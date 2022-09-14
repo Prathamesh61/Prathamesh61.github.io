@@ -77,13 +77,12 @@ const TechStack = () => {
         },
     ]
     return (
-        <Box paddingY={"40px"} bg={bg} color={color} height={"max-content"}>
-            <Text _hover={{ borderBottom: "1px"}} textAlign={"center"} fontSize="3xl" color={color}>
+        <Box paddingY={"40px"} bg={bg} color={color} height={"max-content"} id="Skills">
+            <Text textAlign={"center"} fontSize="3xl" color={color} paddingY={"20px"}>
                 Skills
             </Text>
             <Fade left cascade>
                 <Box
-                    border={"1px solid red"}
                     width="60%"
                     margin="auto"
                     padding="50px"
@@ -93,7 +92,7 @@ const TechStack = () => {
                     flexWrap="wrap"
                     marginY={"30px"}>
                     {(bg === 'white' ? imagesBlue : imagesYellow).map((elem) => {
-                        return <Box
+                        return <Box className='hvr-pop'
                             border="3px solid " width="120px" borderRadius="15px"
                             box-shadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" _hover={{ borderColor: "#3379b5" }}>
                             <ImageWrapper>

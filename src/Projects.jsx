@@ -101,34 +101,32 @@ const Projects = () => {
     const bg = useColorModeValue('white', '#10264f')
     const color = useColorModeValue('#10264f', 'white')
     return (
-        <Box paddingY={"30px"} bg={bg} color={color} >
-            <Text paddingY={"30px"} fontSize="3xl" color={color} textAlign={"center"}>
+        <Box paddingY={"30px"} bg={bg} color={color} id="Projects">
+            <Text textAlign={"center"} fontSize="3xl" color={color} >
                 Projects
             </Text>
-            <VStack width={"70%"} margin={"auto"} gap={"20px"}>
-
+            <VStack paddingY={"30px"} width={"70%"} margin={"auto"} gap={"50px"}>
                 {projectsArr.map((elem) => {
-                    return <HStack _hover={{ trasnsform: "scale(10.7)", animation: "scale 1.5s both" }}>
-                        <SimpleGrid columns={[1, 1, 1, 2]} padding={"20px"} justifyContent={"center"} alignItems={"center"} gap={"20px"} border={"3px solid"} borderColor={color} boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" borderRadius={"15px"}>
-                            <Fade left cascade>
+                    return <HStack className='hvr-grow-shadow' >
+                        <SimpleGrid columns={[1, 1, 1, 2]} padding={"40px"} justifyContent={"center"} alignItems={"center"} gap={"20px"} border={"3px solid"} borderColor={color} boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" borderRadius={"15px"}>
+                            <Fade left cascade >
                                 <Box overflowY={"hidden"} height={"300px"}>
                                     <Img border="3px solid" borderColor={color} borderRadius={"10px"} width={"2500px"} src={elem.banner} alt={elem.title} />
                                 </Box>
                             </Fade>
-
                             <VStack alignSelf={"flex-start"}>
-                                <ScrollAnimation animateIn='animate__backInDown' animatePreScroll='animate__backInDown'delay={"1000"}>
+                                <Fade right cascade>
                                     <Text fontSize="2xl" color={color}>
                                         {elem.title}
                                     </Text>
-                                </ScrollAnimation>
+                                </Fade>
                                 <Text fontSize={"18px"} align={"center"}>
                                     {elem.description}
                                 </Text>
-                                <HStack gap={"10px"} paddingY={"20px"} alignSelf={"center"}>{(bg === 'white' ? elem.techBlue : elem.techYellow).map((el) => <Img _hover={{ width: "35px" }} alignSelf={"start"} width={"30px"} src={el.image} alt={el.alt} />)} </HStack>
+                                <HStack gap={"10px"} paddingY={"20px"} alignSelf={"center"}>{(bg === 'white' ? elem.techBlue : elem.techYellow).map((el) => <Img className='hvr-pop' alignSelf={"start"} width={"30px"} src={el.image} alt={el.alt} />)} </HStack>
                                 <HStack align={"end"}>
-                                    <a href={elem.github} target={"_blank"} ><Button leftIcon={<FaLink />}>Github</Button></a>
-                                    <a href={elem.live} target={"_blank"} ><Button leftIcon={<FaLink />}>Live</Button></a>
+                                    <a href={elem.github} target={"_blank"} ><Button className='hvr-underline-from-center' leftIcon={<FaLink />}>Github</Button></a>
+                                    <a href={elem.live} target={"_blank"} ><Button className='hvr-underline-from-center' leftIcon={<FaLink />}>Live</Button></a>
                                 </HStack>
                             </VStack>
                         </SimpleGrid>

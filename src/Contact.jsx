@@ -44,30 +44,42 @@ const Contact = () => {
         {
             image: "https://i.ibb.co/3yBv9h4/linkedin.png",
             alt: "Linkedin",
+            link: "https://www.linkedin.com/in/prathamesh-rawool411/"
         },
         {
             image: "https://i.ibb.co/jf27KLs/github.png",
             alt: "Github",
+            link: "https://github.com/Prathamesh61"
         },
         {
             image: "https://i.ibb.co/LxNQYxN/email.png",
             alt: "Email",
+            link: "mailto:prathameshrawool411@gmail.com"
+
         },
     ]
 
     return (
-        <Box bg={bg} color={color} paddingY={"30px"}>
+        <Box bg={bg} color={color} paddingY={"30px"} id="Contact">
             <Text paddingY={"30px"} fontSize="3xl" color={color} textAlign={"center"}>
                 Get in Touch
             </Text>
             <Fade left cascade>
-                <HStack width={"60%"} margin={"auto"} gap={"50px"} border={"1px solid green"} justifyContent={"center"} >
+                <HStack width={"60%"} margin={"auto"} gap={"90px"} justifyContent={"center"} >
                     {(bg === 'white' ? contactImagesBlue : contactImagesYellow).map((el) => {
-                        return <Img _hover={{ width: "35px" }} alignSelf={"start"} width={"30px"} src={el.image} alt={el.alt} />
+                        return <a href={el.link} target={"_blank"}><Img className='hvr-pop' alignSelf={"start"} width={"30px"} src={el.image} alt={el.alt} /> </a>
                     })}
                 </HStack>
             </Fade>
-            <Text></Text>
+            <Text paddingTop={"30px"} fontSize="md" color={color} textAlign={"center"}>
+                Email : prathameshrawool411@gmail
+            </Text>
+            <Text paddingBottom={"30px"} fontSize="md" color={color} textAlign={"center"}>
+                contact no. : +91 7083039182
+            </Text>
+            <Text paddingBottom={"30px"} fontSize="xl" color={color} textAlign={"center"}>
+                Made By Prathamesh Rawool
+            </Text>
         </Box>
     )
 }
