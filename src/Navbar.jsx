@@ -1,4 +1,4 @@
-import { Box, Button, IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react'
+import { Box, Button, IconButton, Img, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { FaTimes, FaBars } from "react-icons/fa";
 import { useRef } from 'react';
@@ -17,14 +17,15 @@ export const Navbar = () => {
     }
     return (
         <Box bg={bg} color={color} >
+            {/* style={{ color: "#3379b5", fontSize: "18px", letterSpacing: "0.15em" }} */}
             <Box className='header-nav'>
-                <div style={{ color: "#3379b5", fontSize: "18px", letterSpacing: "0.15em" }}>Prathamesh Rawool</div>
-                <nav ref={navRef} style={{color:color}} >
+                <Img width={"250px"} src='https://i.ibb.co/b7R6Shh/Prathamesh-Logo.png' />
+                <nav ref={navRef} style={{ color: color }} >
                     <Link activeClass="active" to="Home" spy={true} smooth={true} ><a className='hvr-underline-from-center' href="#">Home</a></Link>
                     <Link to="Skills" spy={true} smooth={true} ><a className='hvr-underline-from-center' href="#">Skills</a></Link>
                     <Link to="Projects" spy={true} smooth={true} ><a className='hvr-underline-from-center' href="#">Project</a></Link>
                     <Link to="Contact" spy={true} smooth={true} ><a className='hvr-underline-from-center' href="#">Contact</a></Link>
-                    <a href="./res/Prathamesh_Rawool_Resume.pdf" className='hvr-underline-from-center'>Resume</a>
+                    <a href="./res/Prathamesh_Rawool_Resume.pdf" download className='hvr-underline-from-center'>Resume</a>
                     {bg === 'white' ? <IconButton bg={"transparent"} onClick={toggleColorMode} icon={<FaMoon />} /> : <IconButton bg={"transparent"} onClick={toggleColorMode} icon={<FaSun />} />}
                 </nav>
                 <button className='nav-btn nav-close-btn'>

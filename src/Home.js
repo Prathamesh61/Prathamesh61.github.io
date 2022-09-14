@@ -13,7 +13,7 @@ function Home() {
         <Box bg={bg} color={color} id={"Home"}>
             <Box width="60%"
                 margin="auto" paddingTop={"60px"}>
-                <Text className='Profile_Name' paddingTop={"30px"} color={color} textAlign="center">Hi, I am
+                <Text className='Profile_Name' paddingTop={"30px"} color={color} textAlign="center" fontSize={{ base: '20px', md: '30px', lg: '50px' }}>Hi, I am
                     <Fade top cascade >
                         <span className='Profile_Name'> Prathamesh Rawool</span>
                     </Fade></Text>
@@ -28,7 +28,7 @@ function Home() {
                 <div>
                     <Box width={"80%"} margin={"auto"}>
                         <Fade top cascade >
-                            <Text paddingY={"30px"} fontSize={"18px"} textAlign="center" >
+                            <Text paddingY={"30px"} fontSize={"18px"} textAlign="center" wordBreak={"break-word"}>
                                 An Inquisitive Full Stack Web Developer with knowledge of a wide
                                 range of programming utilities and languages. Has relevant hands-on experience in building websites from scratch. Seeking to leverage
                                 broad development experience and hands-on technical expertise.
@@ -41,12 +41,12 @@ function Home() {
                 margin="auto"
                 paddingY={"20px"}>
                 <HStack gap={"20px"}>
-                    <SimpleGrid columns={[1, 1, 1, 2]} padding={"20px"} justifyContent={"center"} alignItems={"center"} gap={"20px"}>
-                        <Box width={"250px"} box-shadow="rgba(0, 0, 0, 0.35) 0px 5px 15px">
-                            <Fade left cascade>
-                                <Img objectFit={"croped"} width={"100%"} src="../profile.jpg" alt="profile" borderRadius={"20px"} />
-                            </Fade>
-                        </Box>
+                    <SimpleGrid columns={[1, 1, 1, 2]} padding={"20px"} justifyContent={"space-between"} alignItems={"center"} gap={"20px"}>
+                        {/* <Box width={"250px"} box-shadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"> */}
+                        <Fade left cascade>
+                            <Img objectFit={"croped"} width={"100%"} src="https://i.ibb.co/LdzpKPr/IMG-20220702-191103-1-1.jpg" alt="profile" borderRadius={"20px"} />
+                        </Fade>
+                        {/* </Box> */}
                         <VStack width={"100%"}>
                             <Fade right cascade>
                                 <HStack fontSize={"22px"}>
@@ -55,9 +55,11 @@ function Home() {
                                     </Text>
                                 </HStack>
                                 <Text textAlign={"center"} paddingY={"10px"} fontSize={"20px"}>Hi Everyone, I am <span style={{ color: "#3379b5" }}>Prathamesh Rawool</span> from <span style={{ color: "#3379b5" }}>Mumbai, Maharashtra</span>. I have completed my graduation in Bachelor of Science in Information Technology from Mumbai University, Maharashtra.</Text>
-                                {/* <a href="./res/Prathamesh_Rawool_Resume.pdf" download="" id="btn_anchor"><Button id="d_resume">Resume</Button></a> */}
+                                <Box className='btn-grad' borderRadius={"5px"}  border={"1px solid"} borderColor={color}><a href="./res/Prathamesh_Rawool_Resume.pdf" download >Resume </a></Box>
                             </Fade>
-                        </VStack>
+                        </VStack>         
+         
+         
                     </SimpleGrid>
                 </HStack>
             </Box>

@@ -64,7 +64,6 @@ nav a:hover {
 }
 
 .Profile_Name {
-  font-size: 50px;
   color: var(--secondaryColor);
 }
 
@@ -99,8 +98,8 @@ nav a:hover {
 
   .header-nav .nav-close-btn {
     position: fixed;
-    top: 2rem;
-    right: 2rem;
+    top: 0.5rem;
+    right: 0.5rem;
     z-index: 10;
   }
 
@@ -245,4 +244,23 @@ nav a:hover {
     height: 30vmin;
     overflow: hidden;
   }
+}
+         
+.btn-grad {
+  background-image: linear-gradient(to right, #283f74 0%, #182f5d  51%, #293e71  100%);
+  margin: 10px;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }

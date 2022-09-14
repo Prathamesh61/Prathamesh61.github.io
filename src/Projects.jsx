@@ -116,7 +116,7 @@ const Projects = () => {
                             </Fade>
                             <VStack alignSelf={"flex-start"}>
                                 <Fade right cascade>
-                                    <Text fontSize="2xl" color={color}>
+                                    <Text fontSize="2xl" color={color} textAlign={"center"}>
                                         {elem.title}
                                     </Text>
                                 </Fade>
