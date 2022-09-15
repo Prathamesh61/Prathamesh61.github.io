@@ -11,13 +11,13 @@ function Home() {
     const color = useColorModeValue('#10264f', 'white')
     return (
         <Box bg={bg} color={color} id={"Home"}>
-            <Box width="60%"
+            <Box width="60%" minWidth={"499px"}
                 margin="auto" paddingTop={"60px"}>
-                <Text className='Profile_Name' paddingTop={"30px"} color={color} textAlign="center" fontSize={{ base: '20px', md: '30px', lg: '50px' }}>Hi, I am
+                <Text className='Profile_Name' paddingTop={"30px"} color={color} align="center" border={"1px solid red"} fontSize={{ base: '20px', md: '30px', lg: '50px' }}>Hi, I am
                     <Fade top cascade >
                         <span className='Profile_Name'> Prathamesh Rawool</span>
                     </Fade></Text>
-                <Text fontSize="30px" paddingBottom={"30px"} color={color} textAlign="center" >
+                <Text fontSize="30px" paddingBottom={"30px"} color={color} textAlign="center"  >
                     <TypewriterComponent
                         options={{
                             strings: ['A Full Stack Web Developer', 'A Mern Stack Developer',],

@@ -8,7 +8,7 @@ const Statistics = () => {
     const color = useColorModeValue('#10264f', 'white')
     return (
         <Box bg={bg} color={color} paddingY={"30px"} id="stat">
-            <Text textAlign={"center"} fontSize="3xl" color={color} paddingY={"30px"} >DAYS I CODE</Text>
+            <Text textAlign={"center"} fontSize="3xl" paddingY={"30px"} >DAYS I CODE</Text>
             <Fade left cascade>
                 <GitHubCalendar style={{ margin: "auto", width: "70%" }} color={color} username="Prathamesh61"
                     hideColorLegend showWeekdayLabels />

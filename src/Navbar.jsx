@@ -16,7 +16,7 @@ export const Navbar = () => {
         !show ? setShow(true) : setShow(false)
     }
     return (
-        <Box bg={bg} color={color} >
+        <Box bg={bg} color={color} position={"sticky"} top="0" border={"1px solid red"} zIndex="10">
             {/* style={{ color: "#3379b5", fontSize: "18px", letterSpacing: "0.15em" }} */}
             <Box className='header-nav'>
                 <Img width={"250px"} src='https://i.ibb.co/b7R6Shh/Prathamesh-Logo.png' />
