@@ -101,7 +101,7 @@ const Projects = () => {
     const bg = useColorModeValue('white', '#10264f')
     const color = useColorModeValue('#10264f', 'white')
     return (
-        <Box paddingY={"30px"} bg={bg} color={color} id="Projects">
+        <Box paddingY={"30px"} paddingTop={"80px"} bg={bg} color={color} id="Projects">
             <Text textAlign={"center"} fontSize="3xl" color={color} >
                 Projects
             </Text>

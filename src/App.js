@@ -6,6 +6,7 @@ import TechStack from './TechStack';
 import Projects from './Projects';
 import Contact from './Contact';
 import Statistics from './Statistics';
+import Skills from './Skills';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Navbar />
       <Home />
       <TechStack />
+      <Skills/>
       <Projects />
       <Statistics/>
       <Contact />

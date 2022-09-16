@@ -16,17 +16,18 @@ export const Navbar = () => {
         !show ? setShow(true) : setShow(false)
     }
     return (
-        <Box bg={bg} color={color} position={"sticky"} top="0" border={"1px solid red"} zIndex="10">
+        <Box bg={bg} color={color} position={"sticky"} top="0" zIndex="10">
             {/* style={{ color: "#3379b5", fontSize: "18px", letterSpacing: "0.15em" }} */}
             <Box className='header-nav'>
                 <Img width={"250px"} src='https://i.ibb.co/b7R6Shh/Prathamesh-Logo.png' />
                 <nav ref={navRef} style={{ color: color }} >
                     <Link activeClass="active" to="Home" spy={true} smooth={true} ><a className='hvr-underline-from-center' href="#">Home</a></Link>
+                    <Link to="techStack" spy={true} smooth={true} ><a className='hvr-underline-from-center' href="#">Tech Stack</a></Link>
                     <Link to="Skills" spy={true} smooth={true} ><a className='hvr-underline-from-center' href="#">Skills</a></Link>
                     <Link to="Projects" spy={true} smooth={true} ><a className='hvr-underline-from-center' href="#">Project</a></Link>
                     <Link to="Contact" spy={true} smooth={true} ><a className='hvr-underline-from-center' href="#">Contact</a></Link>
                     <a href="./res/Prathamesh_Rawool_Resume.pdf" download className='hvr-underline-from-center'>Resume</a>
-                    {bg === 'white' ? <IconButton bg={"transparent"} onClick={toggleColorMode} icon={<FaMoon />} /> : <IconButton bg={"transparent"} onClick={toggleColorMode} icon={<FaSun />} />}
+                    {bg === 'white' ? <IconButton borderRadius={"50%"} bg={color} colorScheme={bg === 'white' ? "#10264f" : 'white'} onClick={toggleColorMode} icon={<FaMoon />} /> : <IconButton bg={color} colorScheme={bg === 'white' ? "#10264f" : 'white'} onClick={toggleColorMode} borderRadius={"50%"} icon={<FaSun />} />}
                 </nav>
                 <button className='nav-btn nav-close-btn'>
                     {!show ?

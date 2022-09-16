@@ -1,4 +1,4 @@
-import { Box, HStack, Img, Text, useColorModeValue } from '@chakra-ui/react'
+import { Box, HStack, Img, Link, Text, useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
 import { Fade } from 'react-reveal';
 
@@ -60,14 +60,14 @@ const Contact = () => {
     ]
 
     return (
-        <Box bg={bg} color={color} paddingY={"30px"} id="Contact">
+        <Box bg={bg} color={color} paddingY={"30px"} paddingTop={"80px"} id="Contact">
             <Text paddingY={"30px"} fontSize="3xl" color={color} textAlign={"center"}>
                 Get in Touch
             </Text>
             <Fade left cascade>
-                <HStack width={"60%"} margin={"auto"} gap={"90px"} justifyContent={"center"} >
+                <HStack  align={"center"} width={["60%", "40%", "40%", "20%"]} margin={"auto"} gap={"10px"} justifyContent={"space-between"} >
                     {(bg === 'white' ? contactImagesBlue : contactImagesYellow).map((el) => {
-                        return <a href={el.link} target={"_blank"}><Img className='hvr-pop' alignSelf={"start"} width={"30px"} src={el.image} alt={el.alt} /> </a>
+                        return <Link width={"15%"} justifyContent={"center"} alignItems={"center"} href={el.link} target={"_blank"}><Img width={"fit-content"} margin={"auto"} className='hvr-pop' src={el.image} alt={el.alt} /> </Link>
                     })}
                 </HStack>
             </Fade>

@@ -11,11 +11,12 @@ function Home() {
     const color = useColorModeValue('#10264f', 'white')
     return (
         <Box bg={bg} color={color} id={"Home"}>
-            <Box width="60%" minWidth={"499px"}
-                margin="auto" paddingTop={"60px"}>
-                <Text className='Profile_Name' paddingTop={"30px"} color={color} align="center" border={"1px solid red"} fontSize={{ base: '20px', md: '30px', lg: '50px' }}>Hi, I am
+            <Box width="80%"
+                margin="auto" paddingTop={"60px"} >
+                <Text className='Profile_Name' paddingTop={"30px"} color={color} align="center" fontSize={{ sm: '20px', md: '30px', lg: '50px' }}>Hi, I am
                     <Fade top cascade >
-                        <span className='Profile_Name'> Prathamesh Rawool</span>
+                        <span className='Profile_Name'> Prathamesh </span>
+                        <span className='Profile_Name'> Rawool </span>
                     </Fade></Text>
                 <Text fontSize="30px" paddingBottom={"30px"} color={color} textAlign="center"  >
                     <TypewriterComponent
@@ -26,7 +27,7 @@ function Home() {
                         }}
                     /></Text>
                 <div>
-                    <Box width={"80%"} margin={"auto"}>
+                    <Box width={"60%"} margin={"auto"}>
                         <Fade top cascade >
                             <Text paddingY={"30px"} fontSize={"18px"} textAlign="center" wordBreak={"break-word"}>
                                 An Inquisitive Full Stack Web Developer with knowledge of a wide
@@ -55,11 +56,11 @@ function Home() {
                                     </Text>
                                 </HStack>
                                 <Text textAlign={"center"} paddingY={"10px"} fontSize={"20px"}>Hi Everyone, I am <span style={{ color: "#3379b5" }}>Prathamesh Rawool</span> from <span style={{ color: "#3379b5" }}>Mumbai, Maharashtra</span>. I have completed my graduation in Bachelor of Science in Information Technology from Mumbai University, Maharashtra.</Text>
-                                <Box className='btn-grad' borderRadius={"5px"}  border={"1px solid"} borderColor={color}><a href="./res/Prathamesh_Rawool_Resume.pdf" download >Resume </a></Box>
+                                <Box className='btn-grad' borderRadius={"5px"} border={"1px solid"} borderColor={color}><a href="./res/Prathamesh_Rawool_Resume.pdf" download >Resume </a></Box>
                             </Fade>
-                        </VStack>         
-         
-         
+                        </VStack>
+
+
                     </SimpleGrid>
                 </HStack>
             </Box>

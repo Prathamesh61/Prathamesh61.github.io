@@ -77,9 +77,9 @@ const TechStack = () => {
         },
     ]
     return (
-        <Box paddingY={"40px"} bg={bg} color={color} height={"max-content"} id="Skills">
+        <Box paddingY={"40px"} paddingTop={"80px"} bg={bg} color={color} height={"max-content"} id="techStack">
             <Text textAlign={"center"} fontSize="3xl" color={color} paddingY={"20px"}>
-                Skills
+                Tech Stack
             </Text>
             <Fade left cascade>
                 <Box

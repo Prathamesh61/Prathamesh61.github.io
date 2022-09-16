@@ -64,7 +64,8 @@ nav a:hover {
 }
 
 .Profile_Name {
-  color: var(--secondaryColor);
+  color: var(--PrimaryMainColorLight);
+
 }
 
 @media only screen and (max-width: 1024px) {
@@ -72,6 +73,7 @@ nav a:hover {
     visibility: visible;
     opacity: 1;
   }
+
 
 
   .header-nav nav {
@@ -85,10 +87,9 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    z-index: 10;
+    z-index: 0;
     background-color: var(--PrimaryMainColor);
     transition: 1s;
-
     transform: translateY(-100vh);
   }
 
@@ -245,22 +246,23 @@ nav a:hover {
     overflow: hidden;
   }
 }
-         
+
 .btn-grad {
-  background-image: linear-gradient(to right, #283f74 0%, #182f5d  51%, #293e71  100%);
+  background-image: linear-gradient(to right, #283f74 0%, #182f5d 51%, #293e71 100%);
   margin: 10px;
   padding: 12px 40px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
-  color: white;            
+  color: white;
   border-radius: 10px;
   display: block;
 }
 
 .btn-grad:hover {
-  background-position: right center; /* change the direction of the change here */
+  background-position: right center;
+  /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
 }
