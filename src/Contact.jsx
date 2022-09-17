@@ -19,14 +19,17 @@ const Contact = () => {
         {
             image: "https://i.ibb.co/WGx666G/linkedin.png",
             alt: "Linkedin",
+            link: "https://www.linkedin.com/in/prathamesh-rawool411/"
         },
         {
             image: "https://i.ibb.co/54Z8qyt/github.png",
             alt: "Github",
+            link: "https://github.com/Prathamesh61"
         },
         {
             image: "https://i.ibb.co/xf8bBbk/email.png",
             alt: "Email",
+            link: "mailto:prathameshrawool411@gmail.com"
         },
     ]
     //     [url=https://imgbb.com/][img]https://i.ibb.co/PYfBtPr/atom.png[/img][/url]
@@ -65,9 +68,9 @@ const Contact = () => {
                 Get in Touch
             </Text>
             <Fade left cascade>
-                <HStack  align={"center"} width={["60%", "40%", "40%", "20%"]} margin={"auto"} gap={"10px"} justifyContent={"space-between"} >
+                <HStack align={"center"} width={["60%", "40%", "40%", "20%"]} margin={"auto"} gap={"10px"} justifyContent={"space-between"} >
                     {(bg === 'white' ? contactImagesBlue : contactImagesYellow).map((el) => {
-                        return <Link width={"15%"} justifyContent={"center"} alignItems={"center"} href={el.link} target={"_blank"}><Img width={"fit-content"} margin={"auto"} className='hvr-pop' src={el.image} alt={el.alt} /> </Link>
+                        return <Link width={"15%"} justifyContent={"center"} alignItems={"center"} isExternal href={el.link} target={"_blank"}><Img width={"fit-content"} margin={"auto"} className='hvr-pop' src={el.image} alt={el.alt} /> </Link>
                     })}
                 </HStack>
             </Fade>
