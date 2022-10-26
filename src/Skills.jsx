@@ -116,7 +116,7 @@ const Skills = () => {
             alt: "Express"
         },
         {
-            image: "https://i.ibb.co/KXDNqs3/icons8-material-ui-512-1.png",
+            image: "https://i.ibb.co/0GKS2G6/icons8-mysql-logo-512-1.png",
             alt: "MySql"
         },
     ]
