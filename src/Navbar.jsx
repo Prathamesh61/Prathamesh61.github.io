@@ -4,6 +4,7 @@ import { FaTimes, FaBars } from "react-icons/fa";
 import { useRef } from 'react';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import { Link } from 'react-scroll';
+import { Prathamesh_Logo } from './res/other/Prathamesh_Logo.png'
 
 export const Navbar = () => {
     const navRef = useRef();
@@ -16,10 +17,10 @@ export const Navbar = () => {
         !show ? setShow(true) : setShow(false)
     }
     return (
-        <Box bg={bg} color={color} position={"sticky"} top="0" zIndex="10">
+        <Box bg={bg} color={color} position={"sticky"} top="0" zIndex="10" borderBottom={"1px solid"} borderBottomColor={color}>
             {/* style={{ color: "#3379b5", fontSize: "18px", letterSpacing: "0.15em" }} */}
-            <Box className='header-nav'>
-                <Img width={"250px"} src='https://i.ibb.co/b7R6Shh/Prathamesh-Logo.png' />
+            <Box className='header-nav' >
+                <Img width={"250px"} src={require('./res/other/Prathamesh_Logo.png')} />
                 <nav ref={navRef} style={{ color: color }} >
                     <Link activeClass="active" to="Home" spy={true} smooth={true} ><a className='hvr-underline-from-center' href="#">Home</a></Link>
                     <Link to="techStack" spy={true} smooth={true} ><a className='hvr-underline-from-center' href="#">Tech Stack</a></Link>

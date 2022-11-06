@@ -10,30 +10,30 @@ const Projects = () => {
     const projectsArr = [
         {
             title: "Boat-LifeStyle Clone",
-            banner: "https://i.ibb.co/PmWdx1r/Boat-banner.jpg",
+            banner: require('./res/other/Boat-banner.jpeg'),
             description: "BoAt is an India-based consumer electronics brand established in 2015 that markets earphones, headphones stereos, travel chargers and premium rugged cables.",
             techYellow: [{
-                image: "https://i.ibb.co/hg5Xh4C/java-script-Yellow.png",
+                image: require('./res/yellow/java-script.png'),
                 alt: "Javascript"
             },
             {
-                image: "https://i.ibb.co/YWmMyBr/html.png",
+                image: require('./res/yellow/html.png'),
                 alt: "HTML"
             },
             {
-                image: "https://i.ibb.co/RDqBKy0/css-3.png",
+                image: require('./res/yellow/css-3.png'),
                 alt: "CSS"
             },],
             techBlue: [{
-                image: "https://i.ibb.co/KXgBjT5/java-script.png",
+                image: require('./res/blue/java-script.png'),
                 alt: "Javascript"
             },
             {
-                image: "https://i.ibb.co/Sfj8LR3/html.png",
+                image: require('./res/blue/html.png'),
                 alt: "HTML"
             },
             {
-                image: "https://i.ibb.co/4289K4T/css-3.png",
+                image: require('./res/blue/css-3.png'),
                 alt: "CSS"
             },],
             github: 'https://github.com/hariohmtripathi/Boat-Lifestyle-',
@@ -41,30 +41,30 @@ const Projects = () => {
         },
         {
             title: "Sephora-Collection Clone",
-            banner: "https://i.ibb.co/946Rx1T/sephora-banner.jpg",
+            banner: require('./res/other/sephora-banner.jpeg'),
             description: "Sephora is a French multinational retailer of personal care and beauty products. Sephora offers beauty products including cosmetics, skincare, body, fragrance, and many more.",
             techYellow: [{
-                image: "https://i.ibb.co/hg5Xh4C/java-script-Yellow.png",
+                image: require('./res/yellow/java-script.png'),
                 alt: "Javascript"
             },
             {
-                image: "https://i.ibb.co/YWmMyBr/html.png",
+                image: require('./res/yellow/html.png'),
                 alt: "HTML"
             },
             {
-                image: "https://i.ibb.co/RDqBKy0/css-3.png",
+                image: require('./res/yellow/css-3.png'),
                 alt: "CSS"
             },],
             techBlue: [{
-                image: "https://i.ibb.co/KXgBjT5/java-script.png",
+                image: require('./res/blue/java-script.png'),
                 alt: "Javascript"
             },
             {
-                image: "https://i.ibb.co/Sfj8LR3/html.png",
+                image: require('./res/blue/html.png'),
                 alt: "HTML"
             },
             {
-                image: "https://i.ibb.co/4289K4T/css-3.png",
+                image: require('./res/blue/css-3.png'),
                 alt: "CSS"
             },],
 
@@ -73,19 +73,55 @@ const Projects = () => {
         },
         {
             title: "Naukri.com Clone",
-            banner: "https://i.ibb.co/n8spJdf/naukri-banner.jpg",
+            banner: require('./res/other/naukri-banner.jpeg'),
             description: "Naukri.com is a recruitment platform that provides hiring-related services to corporates/recruiters, placement agencies, and job seekers in India and overseas.",
             techBlue: [{
-                image: "https://i.ibb.co/PYfBtPr/atom.png",
+                image: require('./res/blue/atom.png'),
                 alt: "React"
             },],
             techYellow: [{
-                image: "https://i.ibb.co/TYK8KJd/atom.png",
+                image: require('./res/yellow/atom.png'),
                 alt: "React"
             },],
             github: 'https://github.com/Prathamesh61/sick-dress-4939',
             live: 'https://mynaukri.vercel.app/'
         },
+        {
+            title: "TripAdvisor.com Clone",
+            banner: require('./res/other/tripAdvisor-banner.jpeg'),
+            description: "Tripadvisor, Inc. is an American online travel company that offers online hotel reservations and bookings for transportation, lodging, travel experiences, and restaurants.",
+            techBlue: [
+                {
+                    image: require('./res/blue/atom.png'),
+                    alt: "React"
+                },
+                {
+                    image: require('./res/blue/redux.png'),
+                    alt: "Redux"
+                },
+                {
+                    image: require('./res/blue/chakra-ui.png'),
+                    alt: "Chakra UI"
+                },
+            ],
+            techYellow: [
+                {
+                    image: require('./res/yellow/atom.png'),
+                    alt: "React"
+                },
+                {
+                    image: require('./res/yellow/redux.png'),
+                    alt: "Redux"
+                },
+                {
+                    image: require('./res/yellow/chakra-ui.png'),
+                    alt: "Chakra UI"
+                },
+            ],
+            github: 'https://github.com/pallu2108/sedate-toys-1304',
+            live: 'https://trip-advisor-clone.vercel.app/'
+        }
+
     ]
     //     [url=https://imgbb.com/][img]https://i.ibb.co/PYfBtPr/atom.png[/img][/url]
     // [url=https://imgbb.com/][img]https://i.ibb.co/4289K4T/css-3.png[/img][/url]

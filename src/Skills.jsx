@@ -9,39 +9,35 @@ const Skills = () => {
     const frontendBlue = [
 
         {
-            image: "https://i.ibb.co/KXgBjT5/java-script.png",
+            image: require('./res/blue/java-script.png'),
             alt: "Javascript"
         },
         {
-            image: "https://i.ibb.co/Sfj8LR3/html.png",
+            image: require('./res/blue/html.png'),
             alt: "HTML"
         },
         {
-            image: "https://i.ibb.co/4289K4T/css-3.png",
+            image: require('./res/blue/css-3.png'),
             alt: "CSS"
         },
         {
-            image: "https://i.ibb.co/PYfBtPr/atom.png",
+            image: require('./res/blue/atom.png'),
             alt: "React"
         },
         {
-            image: "https://i.ibb.co/2MyRydr/node-js.png",
-            alt: "Node.js"
-        },
-        {
-            image: "https://i.ibb.co/Ld0PCpp/redux.png",
+            image: require('./res/blue/redux.png'),
             alt: "Redux"
         },
         {
-            image: "https://i.ibb.co/5xb70gw/icons8-chakra-ui-512.png",
+            image: require('./res/blue/chakra-ui.png'),
             alt: "Chakra UI"
         },
         {
-            image: "https://i.ibb.co/mqyBN0Z/icons8-typescript-512.png",
+            image: require('./res/blue/typescript.png'),
             alt: "TypeScript"
         },
         {
-            image: "https://i.ibb.co/z8WvydS/icons8-material-ui-512.png",
+            image: require('./res/blue/material-ui.png'),
             alt: "Material UI"
         },
     ]
@@ -49,35 +45,35 @@ const Skills = () => {
     const frontendYellow = [
 
         {
-            image: "https://i.ibb.co/hg5Xh4C/java-script-Yellow.png",
+            image: require('./res/yellow/java-script.png'),
             alt: "Javascript"
         },
         {
-            image: "https://i.ibb.co/YWmMyBr/html.png",
+            image: require('./res/yellow/html.png'),
             alt: "HTML"
         },
         {
-            image: "https://i.ibb.co/RDqBKy0/css-3.png",
+            image: require('./res/yellow/css-3.png'),
             alt: "CSS"
         },
         {
-            image: "https://i.ibb.co/TYK8KJd/atom.png",
+            image: require('./res/yellow/atom.png'),
             alt: "React"
         },
         {
-            image: "https://i.ibb.co/fqP1MPC/redux.png",
+            image: require('./res/yellow/redux.png'),
             alt: "Redux"
         },
         {
-            image: "https://i.ibb.co/4pgQy9f/icons8-chakra-ui-512-1.png",
+            image: require('./res/yellow/chakra-ui.png'),
             alt: "Chakra UI"
         },
         {
-            image: "https://i.ibb.co/6NNRkc0/icons8-typescript-512-1.png",
+            image: require('./res/yellow/typescript.png'),
             alt: "TypeScript"
         },
         {
-            image: "https://i.ibb.co/KXDNqs3/icons8-material-ui-512-1.png",
+            image: require('./res/yellow/material-ui.png'),
             alt: "Material UI"
         },
     ]
@@ -85,52 +81,52 @@ const Skills = () => {
     const backendBlue = [
 
         {
-            image: "https://i.ibb.co/2MyRydr/node-js.png",
+            image: require('./res/blue/node-js.png'),
             alt: "Node.js"
         },
         {
-            image: "https://i.ibb.co/rHjfgnF/mongodb.png",
+            image: require('./res/blue/mongodb.png'),
             alt: "MongoDb"
         },
         {
-            image: "https://i.ibb.co/0rdPJFJ/express.png",
+            image: require('./res/blue/express.png'),
             alt: "Express"
         },
         {
-            image: "https://i.ibb.co/m8CgpF6/icons8-mysql-logo-512.png",
+            image: require('./res/blue/mysql.png'),
             alt: "MySql"
         },
     ]
 
     const backendYellow = [
         {
-            image: "https://i.ibb.co/8xRvVcd/mongodb.png",
+            image: require('./res/yellow/mongodb.png'),
             alt: "MongoDb"
         },
         {
-            image: "https://i.ibb.co/zhtRHHc/nodejs.png",
+            image: require('./res/yellow/nodejs.png'),
             alt: "Node.js"
         },
         {
-            image: "https://i.ibb.co/d0rJcwW/express.png",
+            image: require('./res/yellow/express.png'),
             alt: "Express"
         },
         {
-            image: "https://i.ibb.co/0GKS2G6/icons8-mysql-logo-512-1.png",
+            image: require('./res/yellow/mysql.png'),
             alt: "MySql"
         },
     ]
 
     const commnuicationsBlue = [
         {
-            image: "https://i.ibb.co/GvpNv4v/icons8-teamwork-64.png",
+            image: require('./res/blue/teamwork.png'),
             alt: "Teamwork"
         },
     ]
 
     const commnuicationsYellow = [
         {
-            image: "https://i.ibb.co/0mHp2Gn/icons8-teamwork-64-1.png",
+            image: require('./res/yellow/teamwork.png'),
             alt: "Teamwork"
         },
     ]

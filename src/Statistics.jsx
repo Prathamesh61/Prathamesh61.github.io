@@ -1,4 +1,4 @@
-import { Box, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Center, Img, SimpleGrid, Text, useColorModeValue } from '@chakra-ui/react';
 import React from 'react'
 import GitHubCalendar from 'react-github-calendar';
 import { Fade } from 'react-reveal';
@@ -11,15 +11,17 @@ const Statistics = () => {
             <Text textAlign={"center"} fontSize="3xl" paddingY={"30px"} >DAYS I CODE</Text>
             <Fade left cascade>
                 <GitHubCalendar style={{ margin: "auto", width: "70%" }} color={color} username="Prathamesh61"
-                    hideColorLegend showWeekdayLabels   />
+                    hideColorLegend showWeekdayLabels />
             </Fade>
             <Fade right cascade>
-                <Box width={"60%"} className={"stat_Div"} margin={"auto"} overflow={"hidden"} height={"300px"} marginY={"50px"} >
-                    <div className='stat' >
-                        <iframe loading="lazy" className='stat_iframe'
-                            src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFMOmVnNtQ&#x2F;view?embed">
-                        </iframe>
-                    </div>
+                <Box margin={"auto"} width={"80%"}>
+                    <SimpleGrid columns={[1, 1, 1, 2]}  width={["100%", "80%", "60%"]} margin={"auto"} padding={"20px"} justifyContent={"center"} alignItems={"center"} >
+                        <Img src="https://github-readme-stats.vercel.app/api?username=prathamesh61&show_icons=true&locale=en&theme=tokyonight" alt="prathamesh61" />
+                        <Img src="https://github-readme-streak-stats.herokuapp.com/?user=prathamesh61&theme=tokyonight" alt="prathamesh61" />
+                    </SimpleGrid>
+                    <Box width={["70%", "70%", "60%", "20%"]}  margin={"auto"} justifyItems={"center"} alignItems={"center"} alignSelf={"center"}>
+                        <Img src="https://github-readme-stats.vercel.app/api/top-langs?username=prathamesh61&show_icons=true&locale=en&theme=tokyonight" alt="prathamesh61" />
+                    </Box>
                 </Box>
             </Fade>
         </Box>

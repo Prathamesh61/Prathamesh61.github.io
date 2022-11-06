@@ -17,17 +17,17 @@ const Contact = () => {
     // <a href="https://imgbb.com/"><img src="https://i.ibb.co/fqP1MPC/redux.png" alt="redux" border="0"></a>
     const contactImagesYellow = [
         {
-            image: "https://i.ibb.co/WGx666G/linkedin.png",
+            image: require('./res/yellow/linkedin.png'),
             alt: "Linkedin",
             link: "https://www.linkedin.com/in/prathamesh-rawool411/"
         },
         {
-            image: "https://i.ibb.co/54Z8qyt/github.png",
+            image: require('./res/yellow/github.png'),
             alt: "Github",
             link: "https://github.com/Prathamesh61"
         },
         {
-            image: "https://i.ibb.co/xf8bBbk/email.png",
+            image: require('./res/yellow/email.png'),
             alt: "Email",
             link: "mailto:prathameshrawool411@gmail.com"
         },
@@ -45,17 +45,17 @@ const Contact = () => {
     // [url=https://imgbb.com/][img]https://i.ibb.co/Ld0PCpp/redux.png[/img][/url]
     const contactImagesBlue = [
         {
-            image: "https://i.ibb.co/3yBv9h4/linkedin.png",
+            image: require('./res/blue/linkedin.png'),
             alt: "Linkedin",
             link: "https://www.linkedin.com/in/prathamesh-rawool411/"
         },
         {
-            image: "https://i.ibb.co/jf27KLs/github.png",
+            image: require('./res/blue/github.png'),
             alt: "Github",
             link: "https://github.com/Prathamesh61"
         },
         {
-            image: "https://i.ibb.co/LxNQYxN/email.png",
+            image: require('./res/blue/email.png'),
             alt: "Email",
             link: "mailto:prathameshrawool411@gmail.com"
 

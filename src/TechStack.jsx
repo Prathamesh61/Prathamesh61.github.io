@@ -3,40 +3,42 @@ import React from 'react'
 import styled from 'styled-components'
 import { Fade } from 'react-reveal';
 
+
+
 const TechStack = () => {
     const bg = useColorModeValue('white', '#10264f')
     const color = useColorModeValue('#10264f', 'white')
     const imagesYellow = [
         {
-            image: "https://i.ibb.co/hg5Xh4C/java-script-Yellow.png",
+            image: require('./res/yellow/java-script.png'),
             alt: "Javascript"
         },
         {
-            image: "https://i.ibb.co/YWmMyBr/html.png",
+            image: require('./res/yellow/html.png'),
             alt: "HTML"
         },
         {
-            image: "https://i.ibb.co/RDqBKy0/css-3.png",
+            image: require('./res/yellow/css-3.png'),
             alt: "CSS"
         },
         {
-            image: "https://i.ibb.co/TYK8KJd/atom.png",
+            image: require('./res/yellow/atom.png'),
             alt: "React"
         },
         {
-            image: "https://i.ibb.co/8xRvVcd/mongodb.png",
+            image: require('./res/yellow/mongodb.png'),
             alt: "MongoDb"
         },
         {
-            image: "https://i.ibb.co/zhtRHHc/nodejs.png",
+            image: require('./res/yellow/nodejs.png'),
             alt: "Node-js"
         },
         {
-            image: "https://i.ibb.co/fqP1MPC/redux.png",
+            image: require('./res/yellow/redux.png'),
             alt: "Redux"
         },
         {
-            image: "https://i.ibb.co/d0rJcwW/express.png",
+            image: require('./res/yellow/express.png'),
             alt: "Express"
         },
 
@@ -44,35 +46,35 @@ const TechStack = () => {
 
     const imagesBlue = [
         {
-            image: "https://i.ibb.co/KXgBjT5/java-script.png",
+            image: require('./res/blue/java-script.png'),
             alt: "Javascript"
         },
         {
-            image: "https://i.ibb.co/Sfj8LR3/html.png",
+            image: require('./res/blue/html.png'),
             alt: "HTML"
         },
         {
-            image: "https://i.ibb.co/4289K4T/css-3.png",
+            image: require('./res/blue/css-3.png'),
             alt: "CSS"
         },
         {
-            image: "https://i.ibb.co/PYfBtPr/atom.png",
+            image: require('./res/blue/atom.png'),
             alt: "React"
         },
         {
-            image: "https://i.ibb.co/rHjfgnF/mongodb.png",
+            image: require('./res/blue/mongodb.png'),
             alt: "MongoDb"
         },
         {
-            image: "https://i.ibb.co/2MyRydr/node-js.png",
+            image: require('./res/blue/node-js.png'),
             alt: "Node-js"
         },
         {
-            image: "https://i.ibb.co/Ld0PCpp/redux.png",
+            image: require('./res/blue/redux.png'),
             alt: "Redux"
         },
         {
-            image: "https://i.ibb.co/0rdPJFJ/express.png",
+            image: require('./res/blue/express.png'),
             alt: "Express"
         },
     ]

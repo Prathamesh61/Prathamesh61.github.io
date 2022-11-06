@@ -11,7 +11,7 @@ function Home() {
     const color = useColorModeValue('#10264f', 'white')
     return (
         <Box bg={bg} color={color} id={"Home"}>
-            <Box width="80%"
+            <Box width={"80%"}
                 margin="auto" paddingTop={"60px"} >
                 <Text className='Profile_Name' paddingTop={"30px"} color={color} align="center" fontSize={{ sm: '20px', md: '30px', lg: '50px' }}>Hi, I am
                     <Fade top cascade >
@@ -27,7 +27,7 @@ function Home() {
                         }}
                     /></Text>
                 <div>
-                    <Box width={"60%"} margin={"auto"}>
+                    <Box width={["100%", "80%", "60%"]} margin={"auto"}>
                         <Fade top cascade >
                             <Text paddingY={"30px"} fontSize={"18px"} textAlign="center" wordBreak={"break-word"}>
                                 An Inquisitive Full Stack Web Developer with knowledge of a wide
@@ -38,14 +38,14 @@ function Home() {
                     </Box>
                 </div>
             </Box>
-            <Box width="50%"
+            <Box width={["80%", "50%"]}
                 margin="auto"
                 paddingY={"20px"}>
                 <HStack gap={"20px"}>
                     <SimpleGrid columns={[1, 1, 1, 2]} padding={"20px"} justifyContent={"space-between"} alignItems={"center"} gap={"20px"}>
                         {/* <Box width={"250px"} box-shadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"> */}
                         <Fade left cascade>
-                            <Img objectFit={"croped"} width={"100%"} src="https://i.ibb.co/LdzpKPr/IMG-20220702-191103-1-1.jpg" alt="profile" borderRadius={"20px"} />
+                            <Img margin={"auto"} objectFit={"croped"} width={"80%"} src={require('./res/Profile.jpg')} alt="profile" borderRadius={"20px"} />
                         </Fade>
                         {/* </Box> */}
                         <VStack width={"100%"}>
@@ -59,8 +59,6 @@ function Home() {
                                 <Box className='btn-grad' borderRadius={"5px"} border={"1px solid"} borderColor={color}><a href="./res/Prathamesh_Rawool_Resume.pdf" download >Resume </a></Box>
                             </Fade>
                         </VStack>
-
-
                     </SimpleGrid>
                 </HStack>
             </Box>
