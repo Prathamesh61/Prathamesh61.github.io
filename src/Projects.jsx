@@ -78,10 +78,16 @@ const Projects = () => {
             techBlue: [{
                 image: require('./res/blue/atom.png'),
                 alt: "React"
+            }, {
+                image: require('./res/blue/chakra-ui.png'),
+                alt: "Chakra UI"
             },],
             techYellow: [{
                 image: require('./res/yellow/atom.png'),
                 alt: "React"
+            }, {
+                image: require('./res/yellow/chakra-ui.png'),
+                alt: "Chakra UI"
             },],
             github: 'https://github.com/Prathamesh61/sick-dress-4939',
             live: 'https://mynaukri.vercel.app/'
@@ -120,6 +126,65 @@ const Projects = () => {
             ],
             github: 'https://github.com/pallu2108/sedate-toys-1304',
             live: 'https://trip-advisor-clone.vercel.app/'
+        },
+        {
+            title: "Licious.com Clone",
+            banner: require('./res/other/Licious.png'),
+            description: "Licious is India's largest D2C Unicorn. The company operates on a farm-to-fork model, owning the entire back-end supply chain and cold chain. It has Products like Meat, seafood, ready-to-cook and ready-to-eat meals",
+            techBlue: [
+                {
+                    image: require('./res/blue/atom.png'),
+                    alt: "React"
+                },
+                {
+                    image: require('./res/blue/mongodb.png'),
+                    alt: "MongoDb"
+                },
+                {
+                    image: require('./res/blue/node-js.png'),
+                    alt: "Node-js"
+                },
+                {
+                    image: require('./res/blue/redux.png'),
+                    alt: "Redux"
+                },
+                {
+                    image: require('./res/blue/express.png'),
+                    alt: "Express"
+                },
+                {
+                    image: require('./res/blue/chakra-ui.png'),
+                    alt: "Chakra UI"
+                },
+            ],
+            techYellow: [
+                {
+                    image: require('./res/yellow/atom.png'),
+                    alt: "React"
+                },
+                {
+                    image: require('./res/yellow/mongodb.png'),
+                    alt: "MongoDb"
+                },
+                {
+                    image: require('./res/yellow/nodejs.png'),
+                    alt: "Node-js"
+                },
+                {
+                    image: require('./res/yellow/redux.png'),
+                    alt: "Redux"
+                },
+                {
+                    image: require('./res/yellow/express.png'),
+                    alt: "Express"
+                },
+                {
+                    image: require('./res/yellow/chakra-ui.png'),
+                    alt: "Chakra UI"
+                },
+            ],
+            github: 'https://github.com/Prathamesh61/coherent-laborer-2044',
+            live: 'https://frontend-pi-lovat.vercel.app/'
         }
 
     ]
