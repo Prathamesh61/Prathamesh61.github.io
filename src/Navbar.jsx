@@ -16,6 +16,9 @@ export const Navbar = () => {
         navRef.current.classList.toggle('responsive_nav');
         !show ? setShow(true) : setShow(false)
     }
+    const handleResume = () => {
+        return window.open('https://drive.google.com/file/d/1ASY7FmYH6WRHWDINaDbA1FlvejsjpvDh/view?usp=share_link');
+    }
     return (
         <Box bg={bg} color={color} position={"sticky"} top="0" zIndex="10" borderBottom={"1px solid"} borderBottomColor={color}>
             {/* style={{ color: "#3379b5", fontSize: "18px", letterSpacing: "0.15em" }} */}
@@ -27,7 +30,10 @@ export const Navbar = () => {
                     <Link to="Skills" spy={true} smooth={true} ><a className='hvr-underline-from-center' href="#">Skills</a></Link>
                     <Link to="Projects" spy={true} smooth={true} ><a className='hvr-underline-from-center' href="#">Project</a></Link>
                     <Link to="Contact" spy={true} smooth={true} ><a className='hvr-underline-from-center' href="#">Contact</a></Link>
-                    <a href="./res/Prathamesh_Rawool_Resume.pdf" download className='hvr-underline-from-center'>Resume</a>
+                    {/* <Link to='https://drive.google.com/uc?export=download&id=1ASY7FmYH6WRHWDINaDbA1FlvejsjpvDh' download className='hvr-underline-from-center'>Resume </Link> */}
+
+                    <a href="Prathamesh-Rawool-Resume.pdf" target={"_blank"} download className='hvr-underline-from-center'><Button onClick={handleResume}>Resume</Button></a>
+
                     {bg === 'white' ? <IconButton borderRadius={"50%"} bg={color} colorScheme={bg === 'white' ? "#10264f" : 'white'} onClick={toggleColorMode} icon={<FaMoon />} /> : <IconButton bg={color} colorScheme={bg === 'white' ? "#10264f" : 'white'} onClick={toggleColorMode} borderRadius={"50%"} icon={<FaSun />} />}
                 </nav>
                 <button className='nav-btn nav-close-btn'>

@@ -9,6 +9,65 @@ const Projects = () => {
 
     const projectsArr = [
         {
+            title: "Licious.com Clone",
+            banner: require('./res/other/Licious.png'),
+            description: "Licious is India's largest D2C Unicorn. The company operates on a farm-to-fork model, owning the entire back-end supply chain and cold chain. It has Products like Meat, seafood, ready-to-cook and ready-to-eat meals",
+            techBlue: [
+                {
+                    image: require('./res/blue/atom.png'),
+                    alt: "React"
+                },
+                {
+                    image: require('./res/blue/mongodb.png'),
+                    alt: "MongoDb"
+                },
+                {
+                    image: require('./res/blue/node-js.png'),
+                    alt: "Node-js"
+                },
+                {
+                    image: require('./res/blue/redux.png'),
+                    alt: "Redux"
+                },
+                {
+                    image: require('./res/blue/express.png'),
+                    alt: "Express"
+                },
+                {
+                    image: require('./res/blue/chakra-ui.png'),
+                    alt: "Chakra UI"
+                },
+            ],
+            techYellow: [
+                {
+                    image: require('./res/yellow/atom.png'),
+                    alt: "React"
+                },
+                {
+                    image: require('./res/yellow/mongodb.png'),
+                    alt: "MongoDb"
+                },
+                {
+                    image: require('./res/yellow/nodejs.png'),
+                    alt: "Node-js"
+                },
+                {
+                    image: require('./res/yellow/redux.png'),
+                    alt: "Redux"
+                },
+                {
+                    image: require('./res/yellow/express.png'),
+                    alt: "Express"
+                },
+                {
+                    image: require('./res/yellow/chakra-ui.png'),
+                    alt: "Chakra UI"
+                },
+            ],
+            github: 'https://github.com/Prathamesh61/coherent-laborer-2044',
+            live: 'https://frontend-pi-lovat.vercel.app/'
+        },
+        {
             title: "Boat-LifeStyle Clone",
             banner: require('./res/other/Boat-banner.jpeg'),
             description: "BoAt is an India-based consumer electronics brand established in 2015 that markets earphones, headphones stereos, travel chargers and premium rugged cables.",
@@ -127,65 +186,7 @@ const Projects = () => {
             github: 'https://github.com/pallu2108/sedate-toys-1304',
             live: 'https://trip-advisor-clone.vercel.app/'
         },
-        {
-            title: "Licious.com Clone",
-            banner: require('./res/other/Licious.png'),
-            description: "Licious is India's largest D2C Unicorn. The company operates on a farm-to-fork model, owning the entire back-end supply chain and cold chain. It has Products like Meat, seafood, ready-to-cook and ready-to-eat meals",
-            techBlue: [
-                {
-                    image: require('./res/blue/atom.png'),
-                    alt: "React"
-                },
-                {
-                    image: require('./res/blue/mongodb.png'),
-                    alt: "MongoDb"
-                },
-                {
-                    image: require('./res/blue/node-js.png'),
-                    alt: "Node-js"
-                },
-                {
-                    image: require('./res/blue/redux.png'),
-                    alt: "Redux"
-                },
-                {
-                    image: require('./res/blue/express.png'),
-                    alt: "Express"
-                },
-                {
-                    image: require('./res/blue/chakra-ui.png'),
-                    alt: "Chakra UI"
-                },
-            ],
-            techYellow: [
-                {
-                    image: require('./res/yellow/atom.png'),
-                    alt: "React"
-                },
-                {
-                    image: require('./res/yellow/mongodb.png'),
-                    alt: "MongoDb"
-                },
-                {
-                    image: require('./res/yellow/nodejs.png'),
-                    alt: "Node-js"
-                },
-                {
-                    image: require('./res/yellow/redux.png'),
-                    alt: "Redux"
-                },
-                {
-                    image: require('./res/yellow/express.png'),
-                    alt: "Express"
-                },
-                {
-                    image: require('./res/yellow/chakra-ui.png'),
-                    alt: "Chakra UI"
-                },
-            ],
-            github: 'https://github.com/Prathamesh61/coherent-laborer-2044',
-            live: 'https://frontend-pi-lovat.vercel.app/'
-        }
+
 
     ]
     //     [url=https://imgbb.com/][img]https://i.ibb.co/PYfBtPr/atom.png[/img][/url]
@@ -224,7 +225,7 @@ const Projects = () => {
                                 <Text fontSize={"18px"} align={"center"}>
                                     {elem.description}
                                 </Text>
-                                <HStack gap={"10px"} paddingY={"20px"} alignSelf={"center"}>{(bg === 'white' ? elem.techBlue : elem.techYellow).map((el) => <Img className='hvr-pop' alignSelf={"start"} width={"30px"} src={el.image} alt={el.alt} />)} </HStack>
+                                <Flex flexWrap={'wrap'} justifyContent={"center"} gap={"10px"} paddingY={"20px"} alignSelf={"center"}>{(bg === 'white' ? elem.techBlue : elem.techYellow).map((el) => <Img className='hvr-pop' alignSelf={"start"} width={"30px"} src={el.image} alt={el.alt} />)} </Flex>
                                 <HStack align={"end"}>
                                     <a href={elem.github} target={"_blank"} ><Button className='hvr-underline-from-center' leftIcon={<FaLink />}>Github</Button></a>
                                     <a href={elem.live} target={"_blank"} ><Button className='hvr-underline-from-center' leftIcon={<FaLink />}>Live</Button></a>

@@ -3,12 +3,15 @@ import { Box, color, Heading, HStack, Img, SimpleGrid, Text, useColorModeValue, 
 import { Fade } from 'react-reveal';
 import { Button } from 'react-scroll';
 import TypewriterComponent from 'typewriter-effect';
-import "./res/Prathamesh_Rawool_Resume.pdf"
+// import "./res/Prathamesh_Rawool_Resume.pdf"
 
 
 function Home() {
     const bg = useColorModeValue('white', '#10264f')
     const color = useColorModeValue('#10264f', 'white')
+    const handleResume = () => {
+        return window.open('https://drive.google.com/file/d/1ASY7FmYH6WRHWDINaDbA1FlvejsjpvDh/view?usp=share_link');
+    }
     return (
         <Box bg={bg} color={color} id={"Home"}>
             <Box width={"80%"}
@@ -56,7 +59,7 @@ function Home() {
                                     </Text>
                                 </HStack>
                                 <Text textAlign={"center"} paddingY={"10px"} fontSize={"20px"}>Hi Everyone, I am <span style={{ color: "#3379b5" }}>Prathamesh Rawool</span> from <span style={{ color: "#3379b5" }}>Mumbai, Maharashtra</span>. I have completed my graduation in Bachelor of Science in Information Technology from Mumbai University, Maharashtra.</Text>
-                                <Box className='btn-grad' borderRadius={"5px"} border={"1px solid"} borderColor={color}><a href="./res/Prathamesh_Rawool_Resume.pdf" download >Resume </a></Box>
+                                <Box className='btn-grad' borderRadius={"5px"} border={"1px solid"} borderColor={color}><a href="Prathamesh-Rawool-Resume.pdf" target={"_blank"} download >Resume</a></Box>
                             </Fade>
                         </VStack>
                     </SimpleGrid>
