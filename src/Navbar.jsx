@@ -32,7 +32,7 @@ export const Navbar = () => {
                     <Link to="Contact" spy={true} smooth={true} ><a className='hvr-underline-from-center' href="#">Contact</a></Link>
                     {/* <Link to='https://drive.google.com/uc?export=download&id=1ASY7FmYH6WRHWDINaDbA1FlvejsjpvDh' download className='hvr-underline-from-center'>Resume </Link> */}
 
-                    <a href="Prathamesh-Rawool-Resume.pdf" target={"_blank"} download className='hvr-underline-from-center'><Button onClick={handleResume}>Resume</Button></a>
+                    <a href="Prathamesh-Rawool-Resume.pdf" target={"_blank"} download className='hvr-underline-from-center'><Button color={color} onClick={handleResume}>Resume</Button></a>
 
                     {bg === 'white' ? <IconButton borderRadius={"50%"} bg={color} colorScheme={bg === 'white' ? "#10264f" : 'white'} onClick={toggleColorMode} icon={<FaMoon />} /> : <IconButton bg={color} colorScheme={bg === 'white' ? "#10264f" : 'white'} onClick={toggleColorMode} borderRadius={"50%"} icon={<FaSun />} />}
                 </nav>
