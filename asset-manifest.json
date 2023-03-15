@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.41db2104.css",
-    "main.js": "/static/js/main.eaad21e2.js",
+    "main.js": "/static/js/main.d1d0444d.js",
     "static/js/787.1ac02e96.chunk.js": "/static/js/787.1ac02e96.chunk.js",
-    "static/media/Profile.jpg": "/static/media/Profile.908929d2edb04c79b420.jpg",
     "static/media/Licious.png": "/static/media/Licious.e975d414c9df704b8170.png",
     "static/media/tripAdvisor-banner.jpeg": "/static/media/tripAdvisor-banner.242c39d18e5f337a9b85.jpeg",
     "static/media/naukri-banner.jpeg": "/static/media/naukri-banner.3f9a4a8158801a7dd13d.jpeg",
     "static/media/sephora-banner.jpeg": "/static/media/sephora-banner.d2814094c75222a471f7.jpeg",
+    "static/media/profile-pic.png": "/static/media/profile-pic.0ee146a4e8b68402629e.png",
     "static/media/Boat-banner.jpeg": "/static/media/Boat-banner.f060338cb63f59590e38.jpeg",
     "static/media/atom.png": "/static/media/atom.f1fe709bb1025b5c7abf.png",
     "static/media/Prathamesh_Logo.png": "/static/media/Prathamesh_Logo.54593351fd8c87241b5c.png",
@@ -26,11 +26,11 @@
     "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
     "main.41db2104.css.map": "/static/css/main.41db2104.css.map",
-    "main.eaad21e2.js.map": "/static/js/main.eaad21e2.js.map",
+    "main.d1d0444d.js.map": "/static/js/main.d1d0444d.js.map",
     "787.1ac02e96.chunk.js.map": "/static/js/787.1ac02e96.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.41db2104.css",
-    "static/js/main.eaad21e2.js"
+    "static/js/main.d1d0444d.js"
   ]
 }
