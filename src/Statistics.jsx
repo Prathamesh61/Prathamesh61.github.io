@@ -8,7 +8,6 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
-import GitHubCalendar from "react-github-calendar";
 import { Fade } from "react-awesome-reveal";
 import { motion } from "framer-motion";
 
