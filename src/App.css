@@ -2,6 +2,14 @@
   position: relative;
   background-color: #10264f;
 }
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -100; /* Send it to the background */
+}
 
 .App-logo {
   height: 40vmin;
