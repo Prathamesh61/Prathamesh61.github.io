@@ -12,6 +12,7 @@ import { useRef } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { Link } from "react-scroll";
 import { Prathamesh_Logo } from "./res/other/Prathamesh_Logo.png";
+import { BASE_RESUME_URL } from "./util";
 
 export const Navbar = () => {
   const navRef = useRef();
@@ -24,9 +25,7 @@ export const Navbar = () => {
     !show ? setShow(true) : setShow(false);
   };
   const handleResume = () => {
-    return window.open(
-      "https://drive.google.com/file/d/1amz4nFymuZpdH6nfaOL4seIPQ13xqb5Z/view?usp=sharing"
-    );
+    return window.open(BASE_RESUME_URL);
   };
   return (
     <Box

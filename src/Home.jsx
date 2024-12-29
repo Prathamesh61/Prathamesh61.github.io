@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { Fade, Zoom, Bounce } from "react-awesome-reveal";
 import TypewriterComponent from "typewriter-effect";
+import { BASE_RESUME_URL } from "./util";
 
 function Home() {
   const bg = useColorModeValue("white", "#10264f");
@@ -17,7 +18,7 @@ function Home() {
 
   const handleResume = () => {
     window.open(
-      "https://drive.google.com/file/d/1amz4nFymuZpdH6nfaOL4seIPQ13xqb5Z/view?usp=sharing"
+      BASE_RESUME_URL
     );
   };
 
