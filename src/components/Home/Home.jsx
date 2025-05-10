@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { Fade, Zoom, Bounce } from "react-awesome-reveal";
 import TypewriterComponent from "typewriter-effect";
-import { BASE_RESUME_URL } from "./util";
+import { BASE_RESUME_URL } from "../../util";
 
 function Home() {
   const bg = useColorModeValue("white", "#10264f");
@@ -83,7 +83,7 @@ function Home() {
               margin="auto"
               objectFit="cover"
               width="80%"
-              src={require("./res/Profile.png")}
+              src={require("../../res/Profile.png")}
               alt="profile"
               borderRadius="20px"
             />

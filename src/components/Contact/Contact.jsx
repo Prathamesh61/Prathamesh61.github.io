@@ -18,34 +18,34 @@ const Contact = () => {
     bg === "white"
       ? [
           {
-            image: require("./res/blue/linkedin.png"),
+            image: require("../../res/blue/linkedin.png"),
             alt: "Linkedin",
             link: "https://www.linkedin.com/in/prathamesh-rawool411/",
           },
           {
-            image: require("./res/blue/github.png"),
+            image: require("../../res/blue/github.png"),
             alt: "Github",
             link: "https://github.com/Prathamesh61",
           },
           {
-            image: require("./res/blue/email.png"),
+            image: require("../../res/blue/email.png"),
             alt: "Email",
             link: "mailto:prathameshrawool411@gmail.com",
           },
         ]
       : [
           {
-            image: require("./res/yellow/linkedin.png"),
+            image: require("../../res/yellow/linkedin.png"),
             alt: "Linkedin",
             link: "https://www.linkedin.com/in/prathamesh-rawool411/",
           },
           {
-            image: require("./res/yellow/github.png"),
+            image: require("../../res/yellow/github.png"),
             alt: "Github",
             link: "https://github.com/Prathamesh61",
           },
           {
-            image: require("./res/yellow/email.png"),
+            image: require("../../res/yellow/email.png"),
             alt: "Email",
             link: "mailto:prathameshrawool411@gmail.com",
           },

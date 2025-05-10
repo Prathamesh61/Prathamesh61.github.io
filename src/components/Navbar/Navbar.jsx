@@ -11,8 +11,8 @@ import { FaTimes, FaBars } from "react-icons/fa";
 import { useRef } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { Link } from "react-scroll";
-import { Prathamesh_Logo } from "./res/other/Prathamesh_Logo.png";
-import { BASE_RESUME_URL } from "./util";
+import { Prathamesh_Logo } from "../../res/other/Prathamesh_Logo.png";
+import { BASE_RESUME_URL } from "../../util";
 
 export const Navbar = () => {
   const navRef = useRef();
@@ -39,7 +39,10 @@ export const Navbar = () => {
     >
       {/* style={{ color: "#3379b5", fontSize: "18px", letterSpacing: "0.15em" }} */}
       <Box className="header-nav">
-        <Img width={"250px"} src={require("./res/other/Prathamesh_Logo.png")} />
+        <Img
+          width={"250px"}
+          src={require("../../res/other/Prathamesh_Logo.png")}
+        />
         <nav ref={navRef} style={{ color: color }}>
           <Link
             activeClass="active"
@@ -86,13 +89,12 @@ export const Navbar = () => {
 
           {/* <Link to='https://drive.google.com/uc?export=download&id=1ASY7FmYH6WRHWDINaDbA1FlvejsjpvDh' download className='hvr-underline-from-center'>Resume </Link> */}
 
-          <a
-            href="Prathamesh-Rawool-Resume.pdf"
-            target={"_blank"}
-            download
-            className="hvr-underline-from-center"
-          >
-            <Button color={color} onClick={handleResume}>
+          <a target={"_blank"} className="hvr-underline-from-center">
+            <Button
+              className="hvr-underline-from-center"
+              color={color}
+              onClick={handleResume}
+            >
               Resume
             </Button>
           </a>

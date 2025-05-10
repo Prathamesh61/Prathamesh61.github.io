@@ -1,12 +1,12 @@
 import "./App.css";
-import Navbar from "./Navbar";
-import Home from "./Home";
-import TechStack from "./TechStack";
-import Projects from "./Projects";
-import Contact from "./Contact";
-import Statistics from "./Statistics";
-import Skills from "./Skills";
-import WorkExperience from "./WorkExperience";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./components/Home/Home";
+import TechStack from "./components/TechStack/TechStack";
+import Projects from "./components/Projects/Projects";
+import Contact from "./components/Contact/Contact";
+import Statistics from "./components/Statistics/Statistics";
+import Skills from "./components/Skills/Skills";
+import WorkExperience from "./components/WorkExperience/WorkExperience";
 
 function App() {
   return (
@@ -23,6 +23,4 @@ function App() {
   );
 }
 
-
 export default App;
-

@@ -14,26 +14,26 @@ const Skills = () => {
   const color = useColorModeValue("#10264f", "white");
 
   const frontendSkills = [
-    { image: require("./res/blue/java-script.png"), alt: "JavaScript" },
-    { image: require("./res/blue/html.png"), alt: "HTML" },
-    { image: require("./res/blue/css-3.png"), alt: "CSS" },
-    { image: require("./res/blue/atom.png"), alt: "React" },
-    { image: require("./res/blue/redux.png"), alt: "Redux" },
-    { image: require("./res/blue/chakra-ui.png"), alt: "Chakra UI" },
-    { image: require("./res/blue/typescript.png"), alt: "TypeScript" },
-    { image: require("./res/blue/material-ui.png"), alt: "Material UI" },
+    { image: require("../../res/blue/java-script.png"), alt: "JavaScript" },
+    { image: require("../../res/blue/html.png"), alt: "HTML" },
+    { image: require("../../res/blue/css-3.png"), alt: "CSS" },
+    { image: require("../../res/blue/atom.png"), alt: "React" },
+    { image: require("../../res/blue/redux.png"), alt: "Redux" },
+    { image: require("../../res/blue/chakra-ui.png"), alt: "Chakra UI" },
+    { image: require("../../res/blue/typescript.png"), alt: "TypeScript" },
+    { image: require("../../res/blue/material-ui.png"), alt: "Material UI" },
   ];
 
   const backendSkills = [
-    { image: require("./res/blue/node-js.png"), alt: "Node.js" },
-    { image: require("./res/blue/mongodb.png"), alt: "MongoDB" },
-    { image: require("./res/blue/express.png"), alt: "Express" },
-    { image: require("./res/blue/mysql.png"), alt: "MySQL" },
-    { image: require("./res/blue/serverless.png"), alt: "Serverless" },
+    { image: require("../../res/blue/nodejs.png"), alt: "Node.js" },
+    { image: require("../../res/blue/mongodb.png"), alt: "MongoDB" },
+    { image: require("../../res/blue/express.png"), alt: "Express" },
+    { image: require("../../res/blue/mysql.png"), alt: "MySQL" },
+    { image: require("../../res/blue/serverless.png"), alt: "Serverless" },
   ];
 
   const communicationSkills = [
-    { image: require("./res/blue/teamwork.png"), alt: "Teamwork" },
+    { image: require("../../res/blue/teamwork.png"), alt: "Teamwork" },
   ];
 
   const renderSkills = (skills, animationDirection) => {
@@ -67,7 +67,7 @@ const Skills = () => {
         Skills
       </Text>
       <SimpleGrid
-        w="60%"
+        w={["90%", "90%", "80%"]}
         m="auto"
         columns={[1, 2, 2, 3]}
         p="20px"

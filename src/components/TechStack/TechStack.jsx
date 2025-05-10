@@ -7,31 +7,31 @@ const TechStack = () => {
   const bg = useColorModeValue("white", "#10264f");
   const color = useColorModeValue("#10264f", "white");
   const imagesYellow = [
-    { image: require("./res/yellow/java-script.png"), alt: "Javascript" },
-    { image: require("./res/yellow/html.png"), alt: "HTML" },
-    { image: require("./res/yellow/css-3.png"), alt: "CSS" },
-    { image: require("./res/yellow/atom.png"), alt: "React" },
-    { image: require("./res/yellow/mongodb.png"), alt: "MongoDb" },
-    { image: require("./res/yellow/nodejs.png"), alt: "Node-js" },
-    { image: require("./res/yellow/redux.png"), alt: "Redux" },
-    { image: require("./res/yellow/express.png"), alt: "Express" },
-    { image: require("./res/yellow/aws.png"), alt: "AWS" },
-    { image: require("./res/yellow/serverless.png"), alt: "Serverless" },
-    { image: require("./res/yellow/storybook.png"), alt: "Storybook" },
+    { image: require("../../res/yellow/java-script.png"), alt: "Javascript" },
+    { image: require("../../res/yellow/html.png"), alt: "HTML" },
+    { image: require("../../res/yellow/css-3.png"), alt: "CSS" },
+    { image: require("../../res/yellow/atom.png"), alt: "React" },
+    { image: require("../../res/yellow/mongodb.png"), alt: "MongoDb" },
+    { image: require("../../res/yellow/nodejs.png"), alt: "Node-js" },
+    { image: require("../../res/yellow/redux.png"), alt: "Redux" },
+    { image: require("../../res/yellow/express.png"), alt: "Express" },
+    { image: require("../../res/yellow/aws.png"), alt: "AWS" },
+    { image: require("../../res/yellow/serverless.png"), alt: "Serverless" },
+    { image: require("../../res/yellow/storybook.png"), alt: "Storybook" },
   ];
 
   const imagesBlue = [
-    { image: require("./res/blue/java-script.png"), alt: "Javascript" },
-    { image: require("./res/blue/html.png"), alt: "HTML" },
-    { image: require("./res/blue/css-3.png"), alt: "CSS" },
-    { image: require("./res/blue/atom.png"), alt: "React" },
-    { image: require("./res/blue/mongodb.png"), alt: "MongoDb" },
-    { image: require("./res/blue/node-js.png"), alt: "Node-js" },
-    { image: require("./res/blue/redux.png"), alt: "Redux" },
-    { image: require("./res/blue/express.png"), alt: "Express" },
-    { image: require("./res/blue/aws.png"), alt: "AWS" },
-    { image: require("./res/blue/serverless.png"), alt: "Serverless" },
-    { image: require("./res/blue/storybook.png"), alt: "Storybook" },
+    { image: require("../../res/blue/java-script.png"), alt: "Javascript" },
+    { image: require("../../res/blue/html.png"), alt: "HTML" },
+    { image: require("../../res/blue/css-3.png"), alt: "CSS" },
+    { image: require("../../res/blue/atom.png"), alt: "React" },
+    { image: require("../../res/blue/mongodb.png"), alt: "MongoDb" },
+    { image: require("../../res/blue/nodejs.png"), alt: "Node-js" },
+    { image: require("../../res/blue/redux.png"), alt: "Redux" },
+    { image: require("../../res/blue/express.png"), alt: "Express" },
+    { image: require("../../res/blue/aws.png"), alt: "AWS" },
+    { image: require("../../res/blue/serverless.png"), alt: "Serverless" },
+    { image: require("../../res/blue/storybook.png"), alt: "Storybook" },
   ];
 
   return (
@@ -50,9 +50,9 @@ const TechStack = () => {
       </Fade>
       <Zoom cascade>
         <Box
-          width="80%"
+          width={{ sm: "100%", md: "90%", lg: "80%" }}
           margin="auto"
-          padding="50px"
+          padding={{ sm: "20px", md: "30px", lg: "50px" }}
           display="flex"
           justifyContent="center"
           gap="50px"

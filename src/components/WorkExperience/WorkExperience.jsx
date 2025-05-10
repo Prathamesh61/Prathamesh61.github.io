@@ -41,7 +41,13 @@ const WorkExperience = () => {
   ];
 
   return (
-    <Box py="30px" pt="80px" bg={bg} color={color} id="workExperience">
+    <Box
+      p={["10px", "20px", "30px"]}
+      pt="80px"
+      bg={bg}
+      color={color}
+      id="workExperience"
+    >
       <Text textAlign="center" fontSize="3xl" color={color} mb="20px">
         Work Experience
       </Text>
