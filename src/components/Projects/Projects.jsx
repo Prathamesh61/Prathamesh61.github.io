@@ -55,7 +55,7 @@ const Projects = () => {
         title: "EMS Connect",
         banner: emsconnect,
         description:
-          "A ReactJS UI Library for Dynamic Components created using Storybook, Shadcn and tailwind CSS",
+          "EMS Connect is an organizational meeting app designed to streamline internal communication. Admins can manage employees, create news alerts, schedule meetings, and organize events across the entire organization. It’s built to enhance collaboration and administrative control.",
         tech: [
           { blue: "atom", yellow: "atom", alt: "React" },
           { blue: "storybook", yellow: "storybook", alt: "Storybook" },
@@ -67,7 +67,7 @@ const Projects = () => {
         title: "Bonify Style Kit",
         banner: bskBanner,
         description:
-          "A ReactJS UI Library for Dynamic Components created using Storybook, Shadcn and tailwind CSS",
+          "A ReactJS UI Library for Dynamic Components created using Storybook, Shadcn and tailwind CSS also handled with playwright testing and lerna for CICD checks and development.",
         tech: [
           { blue: "atom", yellow: "atom", alt: "React" },
           { blue: "storybook", yellow: "storybook", alt: "Storybook" },
