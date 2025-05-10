@@ -61,7 +61,16 @@ const Projects = () => {
           { blue: "storybook", yellow: "storybook", alt: "Storybook" },
           { blue: "css-3", yellow: "css-3", alt: "tailwind CSS" },
         ],
-        live: "https://apps.apple.com/in/app/ems-connect-local-416/id6479523021",
+        live: [
+          {
+            link: "https://apps.apple.com/in/app/ems-connect-local-416/id6479523021",
+            name: "App Store",
+          },
+          {
+            link: "https://play.google.com/store/apps/details?id=com.emsconnect&hl=en",
+            name: "Play Store",
+          },
+        ],
       },
       {
         title: "Bonify Style Kit",
@@ -73,7 +82,7 @@ const Projects = () => {
           { blue: "storybook", yellow: "storybook", alt: "Storybook" },
           { blue: "css-3", yellow: "css-3", alt: "tailwind CSS" },
         ],
-        live: "https://frontend-pi-lovat.vercel.app/",
+        live: [{ link: "https://frontend-pi-lovat.vercel.app/", name: "" }],
       },
       {
         title: "Contract Wallet Feature",
@@ -88,7 +97,7 @@ const Projects = () => {
           { blue: "nodejs", yellow: "nodejs", alt: "Node.js" },
           { blue: "serverless", yellow: "serverless", alt: "Serverless" },
         ],
-        live: "https://frontend-pi-lovat.vercel.app/",
+        live: [{ link: "https://frontend-pi-lovat.vercel.app/", name: "" }],
       },
       {
         title: "Parag Unify Crafts",
@@ -103,7 +112,7 @@ const Projects = () => {
           { blue: "express", yellow: "express", alt: "Express.js" },
           { blue: "mongodb", yellow: "mongodb", alt: "MongoDB" },
         ],
-        live: "https://paragunifycrafts.co.in/",
+        live: [{ link: "https://paragunifycrafts.co.in/", name: "" }],
       },
       {
         title: "Goozzby",
@@ -118,7 +127,7 @@ const Projects = () => {
           { blue: "express", yellow: "express", alt: "Express.js" },
           { blue: "mongodb", yellow: "mongodb", alt: "MongoDB" },
         ],
-        live: "https://dashboard.goozzby.com/",
+        live: [{ link: "https://dashboard.goozzby.com/", name: "" }],
       },
     ],
     []
@@ -209,20 +218,23 @@ const Projects = () => {
                         </Button>
                       </a>
                     )}
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Button
-                          className="hvr-underline-from-center"
-                          leftIcon={<FaLink />}
-                        >
-                          Live
-                        </Button>
-                      </a>
-                    )}
+                    {project.live &&
+                      project.live.map((el) => {
+                        return (
+                          <a
+                            href={el.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Button
+                              className="hvr-underline-from-center"
+                              leftIcon={<FaLink />}
+                            >
+                              {el.name || "Live"}
+                            </Button>
+                          </a>
+                        );
+                      })}
                   </HStack>
                 </VStack>
               </SimpleGrid>
