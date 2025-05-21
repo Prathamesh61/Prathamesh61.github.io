@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.6b6f4095.css",
-    "main.js": "/static/js/main.11f35625.js",
+    "main.js": "/static/js/main.cd06d6b1.js",
     "static/js/453.b45b07b2.chunk.js": "/static/js/453.b45b07b2.chunk.js",
     "static/media/paragunifycrafts-banner.jpeg": "/static/media/paragunifycrafts-banner.89c9e04559f5007e208d.jpeg",
     "static/media/emsconnect.jpg": "/static/media/emsconnect.1b0f68432506e7553725.jpg",
@@ -27,11 +27,11 @@
     "static/media/material-ui.png": "/static/media/material-ui.a5289e41ef5688763add.png",
     "index.html": "/index.html",
     "main.6b6f4095.css.map": "/static/css/main.6b6f4095.css.map",
-    "main.11f35625.js.map": "/static/js/main.11f35625.js.map",
+    "main.cd06d6b1.js.map": "/static/js/main.cd06d6b1.js.map",
     "453.b45b07b2.chunk.js.map": "/static/js/453.b45b07b2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6b6f4095.css",
-    "static/js/main.11f35625.js"
+    "static/js/main.cd06d6b1.js"
   ]
 }
