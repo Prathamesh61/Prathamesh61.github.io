@@ -10,6 +10,9 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@tsparticles/engine": "^3.9.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.9.1",
     "animate.css": "^4.1.1",
     "framer-motion": "^7.3.2",
     "gh-pages": "^6.2.0",
@@ -23,6 +26,7 @@
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.7",
     "styled-components": "^5.3.5",
+    "tsparticles": "^3.9.1",
     "typed.js": "^2.0.12",
     "typewriter-effect": "^2.19.0",
     "web-vitals": "^2.1.4"

@@ -16,7 +16,7 @@ const WorkExperience = () => {
   const experiences = [
     {
       company: "86 Agency",
-      role: "Software Development Engineer",
+      role: "Senior Software Development Engineer",
       duration: "May 2023 - Present",
       achievements: [
         "Worked as a full-stack web developer in a fast-paced startup environment.",
@@ -36,29 +36,37 @@ const WorkExperience = () => {
         "Unit Testing",
         "Playwright Testing",
         "Storybook",
+        "NextJS",
+        "Tailwind CSS",
       ],
     },
   ];
 
   return (
     <Box
-      p={["10px", "20px", "30px"]}
-      pt="80px"
+      px={["15px", "30px", "50px", "80px"]}
+      py={["30px", "40px", "50px"]}
+      pt={["60px", "70px", "80px"]}
       bg={bg}
       color={color}
       id="workExperience"
     >
       <Text
         textAlign="center"
-        fontSize="3xl"
+        fontSize={["2xl", "3xl", "4xl"]}
         fontWeight="bold"
         bgGradient="linear(to-r, #3379b5, #fffb1c)"
         bgClip="text"
-        py="20px"
+        py={["10px", "15px", "20px"]}
       >
         Work Experience
       </Text>
-      <Flex direction="column" align="center" gap="20px" py="20px">
+      <Flex
+        direction="column"
+        align="center"
+        gap={["15px", "20px", "30px"]}
+        py={["15px", "20px", "30px"]}
+      >
         {experiences.map((exp, index) => (
           <Fade
             direction={index % 2 === 0 ? "left" : "right"}
@@ -68,9 +76,9 @@ const WorkExperience = () => {
           >
             <Box
               key={index}
-              w={["90%", "100%"]}
+              w={["95%", "90%", "85%", "100%"]}
               m={"auto"}
-              p={["20px", "30px", "50px"]}
+              p={["15px", "25px", "35px", "50px"]}
               borderWidth="1px"
               bg={bg}
               border="2px solid"
@@ -83,29 +91,37 @@ const WorkExperience = () => {
                 justify="space-between"
                 flexDirection={["column", "row", "row"]}
                 align="left"
-                mb="10px"
+                mb={["8px", "10px", "12px"]}
               >
-                <Flex align="center">
-                  <Icon as={FaBuilding} mr="10px" fontSize={"xl"} />
+                <Flex align="center" gap={["8px", "10px"]}>
+                  <Icon as={FaBuilding} fontSize={["lg", "xl", "2xl"]} />
                   <Text fontSize={["xl", "2xl", "3xl"]} fontWeight="bold">
                     {exp.company}
                   </Text>
                 </Flex>
-                <Text fontSize="lg">{exp.duration}</Text>
+                <Text fontSize={["md", "lg", "xl"]}>{exp.duration}</Text>
               </Flex>
-              <Text fontSize={"xl"} fontWeight="medium">
+              <Text fontSize={["lg", "xl", "2xl"]} fontWeight="medium">
                 {exp.role}
               </Text>
-              <Box mt="10px">
+              <Box mt={["8px", "10px", "12px"]}>
                 {exp.achievements.map((ach, idx) => (
-                  <Text key={idx} fontSize="md" mb="5px">
+                  <Text
+                    key={idx}
+                    fontSize={["sm", "md", "lg"]}
+                    mb={["4px", "5px", "6px"]}
+                  >
                     - {ach}
                   </Text>
                 ))}
               </Box>
-              <Flex mt="10px" gap="5px" wrap="wrap">
+              <Flex
+                mt={["8px", "10px", "12px"]}
+                gap={["4px", "5px", "6px"]}
+                wrap="wrap"
+              >
                 {exp.skills.map((skill, idx) => (
-                  <Tag key={idx} colorScheme="blue">
+                  <Tag key={idx} colorScheme="blue" size={["sm", "md", "md"]}>
                     {skill}
                   </Tag>
                 ))}

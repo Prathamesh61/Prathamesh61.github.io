@@ -45,8 +45,9 @@ const TechStack = () => {
 
   return (
     <Box
-      paddingY="40px"
-      paddingTop="80px"
+      px={["15px", "30px", "50px", "80px"]}
+      py={["30px", "40px", "50px"]}
+      pt={["60px", "70px", "80px"]}
       bg={bg}
       color={color}
       height="max-content"
@@ -55,41 +56,44 @@ const TechStack = () => {
       <Fade direction="down" cascade>
         <Text
           textAlign="center"
-          fontSize="3xl"
+          fontSize={["2xl", "3xl", "4xl"]}
           fontWeight="bold"
           bgGradient="linear(to-r, #3379b5, #fffb1c)"
           bgClip="text"
-          py="20px"
+          py={["10px", "15px", "20px"]}
         >
           Tech Stack
         </Text>
         <Text
           textAlign="center"
-          fontSize="md"
+          fontSize={["sm", "md", "lg"]}
           color={color}
           opacity={0.8}
-          mb="30px"
+          mb={["20px", "25px", "30px"]}
+          width={["90%", "80%", "70%"]}
+          margin={"auto"}
+          px={["10px", "15px", "20px"]}
         >
           Technologies I have worked on over the years in my career
         </Text>
       </Fade>
       <Zoom cascade>
         <Box
-          width={{ sm: "100%", md: "90%", lg: "85%" }}
+          width={{ base: "100%", sm: "95%", md: "90%", lg: "85%" }}
           margin="auto"
-          padding={{ sm: "20px", md: "30px", lg: "50px" }}
+          p={{ base: "15px", sm: "20px", md: "30px", lg: "40px" }}
           display="flex"
           justifyContent="center"
-          gap="50px"
+          gap={["20px", "30px", "40px", "50px"]}
           flexWrap="wrap"
-          marginY="30px"
+          my={["20px", "25px", "30px"]}
         >
           {(bg === "white" ? imagesBlue : imagesYellow).map((elem, index) => (
             <Fade key={elem.alt} delay={index * 100}>
               <Box
                 className="hvr-pop"
                 border="3px solid"
-                width="120px"
+                width={["100px", "110px", "120px"]}
                 borderRadius="15px"
                 boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
                 _hover={{ borderColor: "#3379b5" }}
@@ -97,9 +101,9 @@ const TechStack = () => {
                 <ImageWrapper>
                   <Img
                     borderRadius="15px"
-                    height={"100px"}
+                    height={["80px", "90px", "100px"]}
                     objectFit={"contain"}
-                    padding="20px"
+                    p={["15px", "17px", "20px"]}
                     margin={"auto"}
                     src={elem.image}
                     alt={elem.alt}

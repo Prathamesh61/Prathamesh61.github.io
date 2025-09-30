@@ -186,27 +186,42 @@ const Projects = () => {
   };
 
   return (
-    <Box py="30px" pt="80px" bg={bg} color={color} id="Projects">
+    <Box
+      px={["15px", "30px", "50px", "80px"]}
+      py={["30px", "40px", "50px"]}
+      pt={["60px", "70px", "80px"]}
+      bg={bg}
+      color={color}
+      id="Projects"
+    >
       <Text
         textAlign="center"
-        fontSize="3xl"
+        fontSize={["2xl", "3xl", "4xl"]}
         fontWeight="bold"
         bgGradient="linear(to-r, #3379b5, #fffb1c)"
         bgClip="text"
-        py="20px"
+        py={["10px", "15px", "20px"]}
       >
         Projects
       </Text>
       <Text
         textAlign="center"
-        fontSize="md"
+        fontSize={["sm", "md", "lg"]}
         color={color}
         opacity={0.8}
-        mb="30px"
+        mb={["20px", "25px", "30px"]}
+        width={["90%", "80%", "70%"]}
+        margin={"auto"}
+        px={["10px", "15px", "20px"]}
       >
         Projects I have worked on over the years in my career
       </Text>
-      <VStack py="30px" width={["80%", "80%", "70%"]} mx="auto" gap="50px">
+      <VStack
+        py={["20px", "25px", "30px"]}
+        width={["95%", "90%", "85%", "75%"]}
+        mx="auto"
+        gap={["30px", "40px", "50px"]}
+      >
         {projectsArr.map((project, index) => (
           <Fade
             key={project.title}
@@ -218,37 +233,46 @@ const Projects = () => {
             <HStack className="hvr-grow-shadow">
               <SimpleGrid
                 columns={[1, 1, 1, 2]}
-                p={["20px", "30px", "40px"]}
+                p={["15px", "20px", "30px", "40px"]}
                 justifyContent="center"
                 alignItems="center"
-                gap="20px"
+                gap={["15px", "20px", "25px"]}
                 border="3px solid"
                 borderColor={color}
                 boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
                 borderRadius="15px"
               >
-                <Box overflowY="hidden" h={["fit-content", "300px"]}>
+                <Box
+                  overflowY="hidden"
+                  h={["200px", "250px", "300px", "320px"]}
+                >
                   <Img
-                    border="3px solid"
+                    border={["2px solid", "3px solid"]}
                     borderColor={color}
-                    borderRadius="10px"
+                    borderRadius={["8px", "10px"]}
                     width="100%"
+                    height="100%"
+                    objectFit="cover"
                     src={project.banner}
                     alt={project.title}
                   />
                 </Box>
                 <VStack alignSelf="flex-start">
-                  <Text fontSize="2xl" color={color} textAlign="center">
+                  <Text
+                    fontSize={["xl", "2xl", "3xl"]}
+                    color={color}
+                    textAlign="center"
+                  >
                     {project.title}
                   </Text>
-                  <Text fontSize="18px" align="center">
+                  <Text fontSize={["16px", "17px", "18px"]} align="center">
                     {project.description}
                   </Text>
                   <Flex
                     flexWrap="wrap"
                     justifyContent="center"
-                    gap="10px"
-                    py="20px"
+                    gap={["8px", "10px", "12px"]}
+                    py={["15px", "18px", "20px"]}
                     alignSelf="center"
                   >
                     {project.tech.map((tech, i) => (
@@ -256,7 +280,8 @@ const Projects = () => {
                         <Img
                           className="hvr-pop"
                           alignSelf="start"
-                          width="30px"
+                          width={["24px", "28px", "30px", "32px"]}
+                          height={["24px", "28px", "30px", "32px"]}
                           src={getTechImage(
                             bg === "yellow" ? tech.blue : tech.yellow,
                             bg === "white" ? "blue" : "yellow"

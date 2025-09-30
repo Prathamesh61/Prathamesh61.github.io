@@ -21,19 +21,24 @@ function Home() {
   };
 
   return (
-    <Box bg={bg} color={color} id="Home">
-      <Box width="80%" margin="auto" paddingTop="60px" textAlign="center">
+    <Box bg={bg} color={color} id="Home" py={["30px", "40px", "60px"]}>
+      <Box
+        width={["95%", "90%", "85%", "80%"]}
+        margin="auto"
+        px={["10px", "20px", "30px"]}
+        textAlign="center"
+      >
         <Fade cascade direction="down">
           <Text
             className="Profile_Name"
-            paddingTop="30px"
-            fontSize={{ sm: "40px", md: "40px", lg: "50px" }}
+            pt={["10px", "20px", "30px"]}
+            fontSize={["25px", "30px", "40px"]}
           >
             Hi, I am
           </Text>
           <Text
             className="Profile_Name"
-            fontSize={{ sm: "40px", md: "40px", lg: "50px" }}
+            fontSize={["25px", "30px", "40px"]}
             color={color}
           >
             Prathamesh <span style={{ color: "#3379b5" }}>Rawool</span>
@@ -41,7 +46,11 @@ function Home() {
         </Fade>
 
         <Zoom>
-          <Text fontSize="30px" paddingBottom="30px" color={color}>
+          <Text
+            fontSize={["20px", "25px", "30px"]}
+            pb={["20px", "25px", "30px"]}
+            color={color}
+          >
             <TypewriterComponent
               options={{
                 strings: [
@@ -57,8 +66,12 @@ function Home() {
         </Zoom>
 
         <Bounce>
-          <Box width={["100%", "80%", "60%"]} margin="auto">
-            <Text paddingY="30px" fontSize="18px" wordBreak="break-word">
+          <Box width={["100%", "90%", "80%", "60%"]} margin="auto">
+            <Text
+              py={["20px", "25px", "30px"]}
+              fontSize={["16px", "17px", "18px"]}
+              wordBreak="break-word"
+            >
               An Inquisitive Full Stack Web Developer with knowledge of a wide
               range of programming utilities and languages. Has relevant
               hands-on experience in building websites from scratch. Seeking to
@@ -69,32 +82,41 @@ function Home() {
         </Bounce>
       </Box>
 
-      <Box width={["80%", "50%"]} margin="auto" paddingY="20px">
+      <Box
+        width={["95%", "90%", "80%", "70%"]}
+        margin="auto"
+        py={["20px", "30px", "40px"]}
+      >
         <SimpleGrid
           columns={[1, 1, 2]}
-          gap="20px"
-          padding="20px"
+          gap={["15px", "20px", "30px"]}
+          p={["10px", "15px", "20px"]}
           alignItems="center"
         >
           <Fade direction="left">
             <Img
               margin="auto"
               objectFit="cover"
-              width="80%"
+              width={["70%", "60%", "50%", "45%"]}
+              maxW={["200px", "250px", "300px", "350px"]}
               src={require("../../res/Profile.png")}
               alt="profile"
-              borderRadius="20px"
+              borderRadius={["15px", "18px", "20px"]}
             />
           </Fade>
 
           <VStack width="100%">
             <Fade direction="right" cascade>
-              <HStack fontSize="22px">
+              <HStack fontSize={["18px", "20px", "22px"]}>
                 <Text className="hvr-underline-from-center" color={color}>
                   About Me
                 </Text>
               </HStack>
-              <Text textAlign="center" paddingY="10px" fontSize="20px">
+              <Text
+                textAlign="center"
+                py={["8px", "10px", "12px"]}
+                fontSize={["16px", "18px", "20px"]}
+              >
                 Hi Everyone, I am{" "}
                 <span style={{ color: "#3379b5" }}>Prathamesh Rawool</span> from{" "}
                 <span style={{ color: "#3379b5" }}>Mumbai, Maharashtra</span>. I
@@ -107,7 +129,7 @@ function Home() {
                   borderRadius="5px"
                   border="1px solid"
                   borderColor={color}
-                  padding="10px 20px"
+                  p={["8px 16px", "10px 20px", "12px 24px"]}
                 >
                   <a
                     href={BASE_RESUME_URL}

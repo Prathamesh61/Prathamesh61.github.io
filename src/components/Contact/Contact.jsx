@@ -52,16 +52,23 @@ const Contact = () => {
         ];
 
   return (
-    <Box bg={bg} color={color} py="30px" pt="80px" id="Contact">
+    <Box
+      bg={bg}
+      color={color}
+      px={["15px", "30px", "50px", "80px"]}
+      py={["30px", "40px", "50px"]}
+      pt={["60px", "70px", "80px"]}
+      id="Contact"
+    >
       {/* Section Header */}
       <Fade direction="up" duration={1000} triggerOnce>
         <Text
           textAlign="center"
-          fontSize="3xl"
+          fontSize={["2xl", "3xl", "4xl"]}
           fontWeight="bold"
           bgGradient="linear(to-r, #3379b5, #fffb1c)"
           bgClip="text"
-          py="20px"
+          py={["10px", "15px", "20px"]}
         >
           Get In Touch
         </Text>
@@ -71,10 +78,11 @@ const Contact = () => {
       <Fade direction="left" duration={1200} triggerOnce>
         <HStack
           align="center"
-          w={["60%", "40%", "40%", "20%"]}
+          w={["80%", "60%", "40%", "30%"]}
           mx="auto"
-          spacing="20px"
+          spacing={["15px", "20px", "25px"]}
           justify="space-between"
+          px={["10px", "15px", "20px"]}
         >
           {contactImages.map((el, index) => (
             <Link
@@ -85,7 +93,7 @@ const Contact = () => {
             >
               <Img
                 w="100%"
-                maxW="50px"
+                maxW={["40px", "45px", "50px"]}
                 mx="auto"
                 src={el.image}
                 alt={el.alt}
@@ -98,18 +106,27 @@ const Contact = () => {
 
       {/* Contact Details */}
       <Fade direction="up" duration={1400} triggerOnce>
-        <Box textAlign="center" pt="30px">
-          <Text fontSize="md" color={color}>
+        <Box
+          textAlign="center"
+          pt={["20px", "25px", "30px"]}
+          px={["10px", "15px", "20px"]}
+        >
+          <Text fontSize={["sm", "md", "lg"]} color={color}>
             Email:{" "}
             <Link href="mailto:prathameshrawool411@gmail.com" color={color}>
               prathameshrawool411@gmail.com
             </Link>
           </Text>
-          <Text fontSize="md" color={color}>
+          <Text fontSize={["sm", "md", "lg"]} color={color}>
             Contact No.: +91 7083039182
           </Text>
-          <Divider color={color} width={"90vw"} m="auto" my="20px" />
-          <Text fontSize="xl" color={color}>
+          <Divider
+            color={color}
+            width={["95vw", "90vw", "85vw"]}
+            m="auto"
+            my={["15px", "18px", "20px"]}
+          />
+          <Text fontSize={["lg", "xl", "2xl"]} color={color}>
             Made By Prathamesh Rawool
           </Text>
         </Box>

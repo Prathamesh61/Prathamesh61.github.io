@@ -11,7 +11,6 @@ import { FaTimes, FaBars } from "react-icons/fa";
 import { useRef } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { Link } from "react-scroll";
-import { Prathamesh_Logo } from "../../res/other/Prathamesh_Logo.png";
 import { BASE_RESUME_URL } from "../../util";
 
 export const Navbar = () => {
@@ -33,15 +32,19 @@ export const Navbar = () => {
       color={color}
       position={"sticky"}
       top="0"
-      zIndex="10"
+      zIndex="1001"
       borderBottom={"1px solid"}
       borderBottomColor={color}
+      width="100%"
+      boxShadow="sm"
     >
       {/* style={{ color: "#3379b5", fontSize: "18px", letterSpacing: "0.15em" }} */}
       <Box className="header-nav">
         <Img
-          width={"250px"}
+          width={["180px", "200px", "230px", "250px"]}
+          maxW="100%"
           src={require("../../res/other/Prathamesh_Logo.png")}
+          alt="Prathamesh Logo"
         />
         <nav ref={navRef} style={{ color: color }}>
           <Link

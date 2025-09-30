@@ -75,12 +75,12 @@ const Skills = () => {
           display="flex"
           flexDirection="column"
           alignItems="center"
-          borderRadius="15px"
-          gap="10px"
-          minWidth="120px"
-          maxWidth="140px"
+          borderRadius={["12px", "13px", "15px"]}
+          gap={["8px", "9px", "10px"]}
+          minWidth={["90px", "100px", "110px", "120px"]}
+          maxWidth={["110px", "120px", "130px", "140px"]}
           bg={getCategoryGradient(category)}
-          padding="15px"
+          p={["12px", "13px", "15px"]}
           color="white"
           transition="all 0.3s ease"
           position="relative"
@@ -108,10 +108,10 @@ const Skills = () => {
           }}
         >
           <Box
-            width="50px"
-            height="50px"
-            p="8px"
-            borderRadius="8px"
+            width={["40px", "45px", "50px"]}
+            height={["40px", "45px", "50px"]}
+            p={["6px", "7px", "8px"]}
+            borderRadius={["6px", "7px", "8px"]}
             bg="rgba(255, 255, 255, 0.25)"
             display="flex"
             alignItems="center"
@@ -123,7 +123,11 @@ const Skills = () => {
           >
             <Img width="100%" src={skill.image} alt={skill.alt} />
           </Box>
-          <Text fontSize="sm" fontWeight="500" textAlign="center">
+          <Text
+            fontSize={["xs", "sm", "sm"]}
+            fontWeight="500"
+            textAlign="center"
+          >
             {skill.alt}
           </Text>
         </Box>
@@ -132,36 +136,51 @@ const Skills = () => {
   };
 
   return (
-    <Box bg={bg} color={color} pt="80px" pb="40px" id="Skills">
+    <Box
+      bg={bg}
+      color={color}
+      px={["15px", "30px", "50px", "80px"]}
+      py={["30px", "40px", "50px"]}
+      pt={["60px", "70px", "80px"]}
+      id="Skills"
+    >
       <Text
         textAlign="center"
-        fontSize="3xl"
+        fontSize={["2xl", "3xl", "4xl"]}
         fontWeight="bold"
         bgGradient="linear(to-r, #3379b5, #fffb1c)"
         bgClip="text"
-        py="20px"
+        py={["10px", "15px", "20px"]}
       >
         Skills & Technologies
       </Text>
       <Text
         textAlign="center"
-        fontSize="md"
+        fontSize={["sm", "md", "lg"]}
         color={color}
         opacity={0.8}
-        mb="30px"
+        mb={["20px", "25px", "30px"]}
+        width={["90%", "80%", "70%"]}
+        margin={"auto"}
+        px={["10px", "15px", "20px"]}
       >
         My technical expertise and professional capabilities
       </Text>
-      <VStack spacing="40px" w={["90%", "90%", "85%"]} m="auto" p="20px">
+      <VStack
+        spacing={["25px", "35px", "40px"]}
+        w={["95%", "90%", "88%", "85%"]}
+        m="auto"
+        p={["10px", "15px", "20px"]}
+      >
         {/* Frontend Skills - Full Width */}
         <VStack gap="15px" width={"100%"}>
           <Slide direction="left">
             <Text
               textAlign="center"
-              fontSize="2xl"
+              fontSize={["xl", "2xl", "3xl"]}
               fontWeight="semibold"
               color={color}
-              py="10px"
+              py={["8px", "10px", "12px"]}
               position="relative"
             >
               Frontend Skills
@@ -183,7 +202,7 @@ const Skills = () => {
             display={"flex"}
             flexDirection={"row"}
             flexWrap="wrap"
-            gap="15px"
+            gap={["10px", "12px", "15px"]}
             width={"100%"}
             justifyContent="center"
           >
@@ -192,15 +211,19 @@ const Skills = () => {
         </VStack>
 
         {/* Backend & Communication Skills - Side by Side */}
-        <SimpleGrid columns={[1, 1, 2]} spacing="30px" width="100%">
+        <SimpleGrid
+          columns={[1, 1, 2]}
+          spacing={["20px", "25px", "30px"]}
+          width="100%"
+        >
           <VStack gap="15px" width={"100%"}>
             <Slide direction="up">
               <Text
                 textAlign="center"
-                fontSize="2xl"
+                fontSize={["xl", "2xl", "3xl"]}
                 fontWeight="semibold"
                 color={color}
-                py="10px"
+                py={["8px", "10px", "12px"]}
               >
                 Backend Skills
                 <Text
@@ -221,7 +244,7 @@ const Skills = () => {
               display={"flex"}
               flexDirection={"row"}
               flexWrap="wrap"
-              gap="15px"
+              gap={["10px", "12px", "15px"]}
               width={"100%"}
               justifyContent="center"
             >
@@ -229,14 +252,14 @@ const Skills = () => {
             </Box>
           </VStack>
 
-          <VStack gap="15px" width={"100%"}>
+          <VStack gap={["10px", "12px", "15px"]} width={"100%"}>
             <Slide direction="right">
               <Text
                 textAlign="center"
-                fontSize="2xl"
+                fontSize={["xl", "2xl", "3xl"]}
                 fontWeight="semibold"
                 color={color}
-                py="10px"
+                py={["8px", "10px", "12px"]}
               >
                 Soft Skills
                 <Text
