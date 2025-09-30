@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.6b6f4095.css",
-    "main.js": "/static/js/main.69eb7445.js",
+    "main.css": "/static/css/main.8a230754.css",
+    "main.js": "/static/js/main.7adbd5c0.js",
     "static/js/453.b45b07b2.chunk.js": "/static/js/453.b45b07b2.chunk.js",
     "static/media/cricarabia-banner.png": "/static/media/cricarabia-banner.deeb72f0fd52f978ab09.png",
     "static/media/paragunifycrafts-banner.jpeg": "/static/media/paragunifycrafts-banner.89c9e04559f5007e208d.jpeg",
@@ -33,12 +33,12 @@
     "static/media/mongodb.png": "/static/media/mongodb.d11305f886e3ecd68f23.png",
     "static/media/material-ui.png": "/static/media/material-ui.a5289e41ef5688763add.png",
     "index.html": "/index.html",
-    "main.6b6f4095.css.map": "/static/css/main.6b6f4095.css.map",
-    "main.69eb7445.js.map": "/static/js/main.69eb7445.js.map",
+    "main.8a230754.css.map": "/static/css/main.8a230754.css.map",
+    "main.7adbd5c0.js.map": "/static/js/main.7adbd5c0.js.map",
     "453.b45b07b2.chunk.js.map": "/static/js/453.b45b07b2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6b6f4095.css",
-    "static/js/main.69eb7445.js"
+    "static/css/main.8a230754.css",
+    "static/js/main.7adbd5c0.js"
   ]
 }
