@@ -18,6 +18,8 @@ const Skills = () => {
     { image: require("../../res/blue/html.png"), alt: "HTML" },
     { image: require("../../res/blue/css-3.png"), alt: "CSS" },
     { image: require("../../res/blue/atom.png"), alt: "React" },
+    { image: require("../../res/blue/nextjs.png"), alt: "Next.js" },
+    { image: require("../../res/blue/tailwind-css.png"), alt: "Tailwind CSS" },
     { image: require("../../res/blue/redux.png"), alt: "Redux" },
     { image: require("../../res/blue/chakra-ui.png"), alt: "Chakra UI" },
     { image: require("../../res/blue/typescript.png"), alt: "TypeScript" },
@@ -26,34 +28,102 @@ const Skills = () => {
 
   const backendSkills = [
     { image: require("../../res/blue/nodejs.png"), alt: "Node.js" },
-    { image: require("../../res/blue/mongodb.png"), alt: "MongoDB" },
     { image: require("../../res/blue/express.png"), alt: "Express" },
+    { image: require("../../res/blue/socket-io.png"), alt: "Socket.io" },
+    { image: require("../../res/blue/mongodb.png"), alt: "MongoDB" },
     { image: require("../../res/blue/mysql.png"), alt: "MySQL" },
     { image: require("../../res/blue/serverless.png"), alt: "Serverless" },
   ];
 
   const communicationSkills = [
     { image: require("../../res/blue/teamwork.png"), alt: "Teamwork" },
+    { image: require("../../res/blue/team-player.png"), alt: "Team Player" },
+    { image: require("../../res/blue/team-leader.png"), alt: "Leadership" },
   ];
 
-  const renderSkills = (skills, animationDirection) => {
+  const renderSkills = (skills, category) => {
+    const getCategoryGradient = (category) => {
+      switch (category) {
+        case "frontend":
+          return "linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
+        case "backend":
+          return "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)";
+        case "soft":
+          return "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)";
+        default:
+          return "linear-gradient(135deg, #3379b5 0%, #2c5aa0 100%)";
+      }
+    };
+
+    const getCategoryHoverGradient = (category) => {
+      switch (category) {
+        case "frontend":
+          return "linear-gradient(135deg, #667eea 0%, #5a67d8 100%)";
+        case "backend":
+          return "linear-gradient(135deg, #f093fb 0%, #e53e3e 100%)";
+        case "soft":
+          return "linear-gradient(135deg, #4facfe 0%, #38b2ac 100%)";
+        default:
+          return "linear-gradient(135deg, #3379b5 0%, #1e3a8a 100%)";
+      }
+    };
+
     return skills.map((skill, index) => (
-      <Fade key={skill.alt} delay={index * 50}>
+      <Fade key={skill.alt} delay={index * 30}>
         <Box
           className="hvr-grow-shadow"
           display="flex"
+          flexDirection="column"
           alignItems="center"
-          borderRadius="10px"
-          gap="20px"
-          width="100%"
-          bg="#3379b5"
+          borderRadius="15px"
+          gap="10px"
+          minWidth="120px"
+          maxWidth="140px"
+          bg={getCategoryGradient(category)}
           padding="15px"
-          color={color}
+          color="white"
+          transition="all 0.3s ease"
+          position="relative"
+          cursor="pointer"
+          _before={{
+            content: '""',
+            position: "absolute",
+            top: "-2px",
+            left: "-2px",
+            right: "-2px",
+            bottom: "-2px",
+            background: getCategoryGradient(category),
+            borderRadius: "17px",
+            zIndex: "-1",
+            opacity: 0,
+            transition: "opacity 0.3s ease",
+          }}
+          _hover={{
+            transform: "translateY(-5px) scale(1.02)",
+            boxShadow: "0 15px 35px rgba(0, 0, 0, 0.2)",
+            bg: getCategoryHoverGradient(category),
+            _before: {
+              opacity: 0.3,
+            },
+          }}
         >
-          <Box width={"12%"}>
+          <Box
+            width="50px"
+            height="50px"
+            p="8px"
+            borderRadius="8px"
+            bg="rgba(255, 255, 255, 0.25)"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            transition="all 0.3s ease"
+            _hover={{
+              transform: "rotate(5deg) scale(1.1)",
+            }}
+          >
             <Img width="100%" src={skill.image} alt={skill.alt} />
           </Box>
-          <Text width={"100%"} fontSize="xl">
+          <Text fontSize="sm" fontWeight="500" textAlign="center">
             {skill.alt}
           </Text>
         </Box>
@@ -62,63 +132,140 @@ const Skills = () => {
   };
 
   return (
-    <Box bg={bg} color={color} pt="80px" id="Skills">
-      <Text textAlign="center" fontSize="3xl" color={color} py="20px">
-        Skills
-      </Text>
-      <SimpleGrid
-        w={["90%", "90%", "80%"]}
-        m="auto"
-        columns={[1, 2, 2, 3]}
-        p="20px"
-        spacing="20px"
+    <Box bg={bg} color={color} pt="80px" pb="40px" id="Skills">
+      <Text
+        textAlign="center"
+        fontSize="3xl"
+        fontWeight="bold"
+        bgGradient="linear(to-r, #3379b5, #fffb1c)"
+        bgClip="text"
+        py="20px"
       >
-        <VStack gap="10px" width={"100%"}>
+        Skills & Technologies
+      </Text>
+      <Text
+        textAlign="center"
+        fontSize="md"
+        color={color}
+        opacity={0.8}
+        mb="30px"
+      >
+        My technical expertise and professional capabilities
+      </Text>
+      <VStack spacing="40px" w={["90%", "90%", "85%"]} m="auto" p="20px">
+        {/* Frontend Skills - Full Width */}
+        <VStack gap="15px" width={"100%"}>
           <Slide direction="left">
-            <Text textAlign="center" fontSize="2xl" color={color} py="20px">
+            <Text
+              textAlign="center"
+              fontSize="2xl"
+              fontWeight="semibold"
+              color={color}
+              py="10px"
+              position="relative"
+            >
               Frontend Skills
+              <Text
+                as="span"
+                fontSize="sm"
+                fontWeight="normal"
+                opacity={0.7}
+                ml="8px"
+                bg="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+                bgClip="text"
+                color="transparent"
+              >
+                ({frontendSkills.length})
+              </Text>
             </Text>
           </Slide>
           <Box
             display={"flex"}
-            flexDirection={"column"}
-            gap="10px"
+            flexDirection={"row"}
+            flexWrap="wrap"
+            gap="15px"
             width={"100%"}
+            justifyContent="center"
           >
-            {renderSkills(frontendSkills)}
+            {renderSkills(frontendSkills, "frontend")}
           </Box>
         </VStack>
-        <VStack gap="10px" width={"100%"}>
-          <Slide direction="up">
-            <Text textAlign="center" fontSize="2xl" color={color} py="20px">
-              Backend Skills
-            </Text>
-          </Slide>
-          <Box
-            display={"flex"}
-            flexDirection={"column"}
-            gap="10px"
-            width={"100%"}
-          >
-            {renderSkills(backendSkills)}
-          </Box>
-        </VStack>
-        <VStack gap="10px" width={"100%"}>
-          <Slide direction="right">
-            <Text textAlign="center" fontSize="2xl" color={color} py="20px">
-              Communication Skills
-            </Text>
-          </Slide>
-          <Box
-            display={"flex"}
-            flexDirection={"column"}
-            gap="10px"
-            width={"100%"}
-          >
-            {renderSkills(communicationSkills)}
-          </Box>
-        </VStack>
-      </SimpleGrid>
+
+        {/* Backend & Communication Skills - Side by Side */}
+        <SimpleGrid columns={[1, 1, 2]} spacing="30px" width="100%">
+          <VStack gap="15px" width={"100%"}>
+            <Slide direction="up">
+              <Text
+                textAlign="center"
+                fontSize="2xl"
+                fontWeight="semibold"
+                color={color}
+                py="10px"
+              >
+                Backend Skills
+                <Text
+                  as="span"
+                  fontSize="sm"
+                  fontWeight="normal"
+                  opacity={0.7}
+                  ml="8px"
+                  bg="linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+                  bgClip="text"
+                  color="transparent"
+                >
+                  ({backendSkills.length})
+                </Text>
+              </Text>
+            </Slide>
+            <Box
+              display={"flex"}
+              flexDirection={"row"}
+              flexWrap="wrap"
+              gap="15px"
+              width={"100%"}
+              justifyContent="center"
+            >
+              {renderSkills(backendSkills, "backend")}
+            </Box>
+          </VStack>
+
+          <VStack gap="15px" width={"100%"}>
+            <Slide direction="right">
+              <Text
+                textAlign="center"
+                fontSize="2xl"
+                fontWeight="semibold"
+                color={color}
+                py="10px"
+              >
+                Soft Skills
+                <Text
+                  as="span"
+                  fontSize="sm"
+                  fontWeight="normal"
+                  opacity={0.7}
+                  ml="8px"
+                  bg="linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+                  bgClip="text"
+                  color="transparent"
+                >
+                  ({communicationSkills.length})
+                </Text>
+              </Text>
+            </Slide>
+            <Box
+              display={"flex"}
+              flexDirection={"row"}
+              flexWrap="wrap"
+              gap="15px"
+              width={"100%"}
+              justifyContent="center"
+            >
+              {renderSkills(communicationSkills, "soft")}
+            </Box>
+          </VStack>
+        </SimpleGrid>
+      </VStack>
     </Box>
   );
 };

@@ -17,7 +17,14 @@ const Statistics = () => {
 
   return (
     <Box bg={bg} color={color} paddingY={"30px"} paddingTop={"80px"} id="stat">
-      <Text textAlign={"center"} fontSize="3xl" paddingY={"30px"}>
+      <Text
+        textAlign="center"
+        fontSize="3xl"
+        fontWeight="bold"
+        bgGradient="linear(to-r, #3379b5, #fffb1c)"
+        bgClip="text"
+        py="20px"
+      >
         DAYS I CODE
       </Text>
 

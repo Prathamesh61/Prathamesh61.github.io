@@ -17,9 +17,7 @@ function Home() {
   const color = useColorModeValue("#10264f", "white");
 
   const handleResume = () => {
-    window.open(
-      BASE_RESUME_URL
-    );
+    window.open(BASE_RESUME_URL);
   };
 
   return (
@@ -112,7 +110,7 @@ function Home() {
                   padding="10px 20px"
                 >
                   <a
-                    href="Prathamesh-Laxman-Rawool-Resume.pdf"
+                    href={BASE_RESUME_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     download

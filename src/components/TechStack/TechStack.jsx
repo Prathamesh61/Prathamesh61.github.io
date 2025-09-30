@@ -18,6 +18,12 @@ const TechStack = () => {
     { image: require("../../res/yellow/aws.png"), alt: "AWS" },
     { image: require("../../res/yellow/serverless.png"), alt: "Serverless" },
     { image: require("../../res/yellow/storybook.png"), alt: "Storybook" },
+    { image: require("../../res/yellow/socket-io.png"), alt: "Socket-io" },
+    { image: require("../../res/yellow/nextjs.png"), alt: "NextJS" },
+    {
+      image: require("../../res/yellow/tailwind-css.png"),
+      alt: "Tailwind CSS",
+    },
   ];
 
   const imagesBlue = [
@@ -32,6 +38,9 @@ const TechStack = () => {
     { image: require("../../res/blue/aws.png"), alt: "AWS" },
     { image: require("../../res/blue/serverless.png"), alt: "Serverless" },
     { image: require("../../res/blue/storybook.png"), alt: "Storybook" },
+    { image: require("../../res/blue/socket-io.png"), alt: "Socket-io" },
+    { image: require("../../res/blue/tailwind-css.png"), alt: "Tailwind CSS" },
+    { image: require("../../res/blue/nextjs.png"), alt: "NextJS" },
   ];
 
   return (
@@ -44,13 +53,29 @@ const TechStack = () => {
       id="techStack"
     >
       <Fade direction="down" cascade>
-        <Text textAlign="center" fontSize="3xl" color={color} paddingY="20px">
+        <Text
+          textAlign="center"
+          fontSize="3xl"
+          fontWeight="bold"
+          bgGradient="linear(to-r, #3379b5, #fffb1c)"
+          bgClip="text"
+          py="20px"
+        >
           Tech Stack
+        </Text>
+        <Text
+          textAlign="center"
+          fontSize="md"
+          color={color}
+          opacity={0.8}
+          mb="30px"
+        >
+          Technologies I have worked on over the years in my career
         </Text>
       </Fade>
       <Zoom cascade>
         <Box
-          width={{ sm: "100%", md: "90%", lg: "80%" }}
+          width={{ sm: "100%", md: "90%", lg: "85%" }}
           margin="auto"
           padding={{ sm: "20px", md: "30px", lg: "50px" }}
           display="flex"

@@ -20,6 +20,8 @@ import contractWalletBanner from "../../res/other/contractWallet-banner.jpeg";
 import paragBanner from "../../res/other/paragunifycrafts-banner.jpeg";
 import goozzbyBanner from "../../res/other/goozzby-banner.jpeg";
 import emsconnect from "../../res/other/emsconnect.jpg";
+import cricarabia from "../../res/other/cricarabia-banner.png";
+import logyxpsBanner from "../../res/other/logyxps-banner.png";
 
 const techIcons = {
   blue: {
@@ -32,6 +34,9 @@ const techIcons = {
     mongodb: require("../../res/blue/mongodb.png"),
     serverless: require("../../res/blue/serverless.png"),
     storybook: require("../../res/blue/storybook.png"),
+    nextjs: require("../../res/blue/nextjs.png"),
+    tailwind: require("../../res/blue/tailwind-css.png"),
+    "socket-io": require("../../res/blue/socket-io.png"),
   },
   yellow: {
     atom: require("../../res/yellow/atom.png"),
@@ -43,8 +48,12 @@ const techIcons = {
     mongodb: require("../../res/yellow/mongodb.png"),
     serverless: require("../../res/yellow/serverless.png"),
     storybook: require("../../res/yellow/storybook.png"),
+    nextjs: require("../../res/yellow/nextjs.png"),
+    tailwind: require("../../res/yellow/tailwind-css.png"),
+    "socket-io": require("../../res/yellow/socket-io.png"),
   },
 };
+
 const Projects = () => {
   const bg = useColorModeValue("white", "#10264f");
   const color = useColorModeValue("#10264f", "white");
@@ -52,13 +61,52 @@ const Projects = () => {
   const projectsArr = useMemo(
     () => [
       {
+        title: "CricArabia",
+        banner: cricarabia,
+        description:
+          "CricArabia is a comprehensive cricket application designed for cricket enthusiasts across the Arab region. The app provides real-time cricket scores, match updates, player statistics, and tournament information.",
+        tech: [
+          { blue: "atom", yellow: "atom", alt: "React" },
+          { blue: "nextjs", yellow: "nextjs", alt: "NextJS" },
+          { blue: "tailwind", yellow: "tailwind", alt: "Tailwind CSS" },
+          { blue: "socket-io", yellow: "socket-io", alt: "Socket-io" },
+        ],
+        live: [
+          {
+            link: "https://cricarabia.com",
+            name: "",
+          },
+        ],
+      },
+      {
+        title: "Logyxps",
+        banner: logyxpsBanner,
+        description:
+          "Logyxps is an advanced logistics and supply chain management platform designed to optimize delivery operations and enhance customer experience. The platform provides real-time tracking, route optimization, inventory management, and comprehensive analytics for businesses looking to streamline their logistics operations.",
+        tech: [
+          { blue: "atom", yellow: "atom", alt: "React" },
+
+          { blue: "redux", yellow: "redux", alt: "Redux" },
+          { blue: "mongodb", yellow: "mongodb", alt: "MongoDB" },
+          { blue: "serverless", yellow: "serverless", alt: "Serverless" },
+          { blue: "tailwind", yellow: "tailwind", alt: "Tailwind CSS" },
+          { blue: "socket-io", yellow: "socket-io", alt: "Socket-io" },
+        ],
+        live: [
+          {
+            link: "https://app.logyxps.com",
+            name: "",
+          },
+        ],
+      },
+      {
         title: "EMS Connect",
         banner: emsconnect,
         description:
           "EMS Connect is an organizational meeting app designed to streamline internal communication. Admins can manage employees, create news alerts, schedule meetings, and organize events across the entire organization. It’s built to enhance collaboration and administrative control.",
         tech: [
           { blue: "atom", yellow: "atom", alt: "React" },
-          { blue: "storybook", yellow: "storybook", alt: "Storybook" },
+          { blue: "serverless", yellow: "serverless", alt: "Serverless" },
           { blue: "css-3", yellow: "css-3", alt: "tailwind CSS" },
         ],
         live: [
@@ -134,14 +182,29 @@ const Projects = () => {
   );
 
   const getTechImage = (techName, theme) => {
-    console.log({ theme, techName });
     return techIcons[theme][techName];
   };
 
   return (
     <Box py="30px" pt="80px" bg={bg} color={color} id="Projects">
-      <Text textAlign="center" fontSize="3xl" color={color}>
+      <Text
+        textAlign="center"
+        fontSize="3xl"
+        fontWeight="bold"
+        bgGradient="linear(to-r, #3379b5, #fffb1c)"
+        bgClip="text"
+        py="20px"
+      >
         Projects
+      </Text>
+      <Text
+        textAlign="center"
+        fontSize="md"
+        color={color}
+        opacity={0.8}
+        mb="30px"
+      >
+        Projects I have worked on over the years in my career
       </Text>
       <VStack py="30px" width={["80%", "80%", "70%"]} mx="auto" gap="50px">
         {projectsArr.map((project, index) => (

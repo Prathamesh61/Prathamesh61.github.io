@@ -48,7 +48,14 @@ const WorkExperience = () => {
       color={color}
       id="workExperience"
     >
-      <Text textAlign="center" fontSize="3xl" color={color} mb="20px">
+      <Text
+        textAlign="center"
+        fontSize="3xl"
+        fontWeight="bold"
+        bgGradient="linear(to-r, #3379b5, #fffb1c)"
+        bgClip="text"
+        py="20px"
+      >
         Work Experience
       </Text>
       <Flex direction="column" align="center" gap="20px" py="20px">

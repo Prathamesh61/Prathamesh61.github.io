@@ -55,8 +55,15 @@ const Contact = () => {
     <Box bg={bg} color={color} py="30px" pt="80px" id="Contact">
       {/* Section Header */}
       <Fade direction="up" duration={1000} triggerOnce>
-        <Text py="30px" fontSize="3xl" color={color} textAlign="center">
-          Get in Touch
+        <Text
+          textAlign="center"
+          fontSize="3xl"
+          fontWeight="bold"
+          bgGradient="linear(to-r, #3379b5, #fffb1c)"
+          bgClip="text"
+          py="20px"
+        >
+          Get In Touch
         </Text>
       </Fade>
 
