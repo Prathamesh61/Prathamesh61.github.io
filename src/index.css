@@ -135,7 +135,9 @@ nav a:hover {
   }
 
   .header-nav .responsive_nav {
-    transform: none;
+    transform: translateY(0);
+    visibility: visible;
+    z-index: 999;
   }
 
   .header-nav .nav-close-btn {
