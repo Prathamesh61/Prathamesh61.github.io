@@ -16,12 +16,6 @@ function Home() {
   const bg = useColorModeValue("white", "#10264f");
   const color = useColorModeValue("#10264f", "white");
 
-  const handleResume = () => {
-    window.open(
-      BASE_RESUME_URL
-    );
-  };
-
   return (
     <Box bg={bg} color={color} id="Home">
       <Box width="80%" margin="auto" paddingTop="60px" textAlign="center">
@@ -58,17 +52,15 @@ function Home() {
           </Text>
         </Zoom>
 
-        <Bounce>
-          <Box width={["100%", "80%", "60%"]} margin="auto">
-            <Text paddingY="30px" fontSize="18px" wordBreak="break-word">
-              An Inquisitive Full Stack Web Developer with knowledge of a wide
-              range of programming utilities and languages. Has relevant
-              hands-on experience in building websites from scratch. Seeking to
-              leverage broad development experience and hands-on technical
-              expertise.
-            </Text>
-          </Box>
-        </Bounce>
+        <Box width={["100%", "80%", "60%"]} margin="auto">
+          <Text paddingY="30px" fontSize="18px" wordBreak="break-word">
+            An Inquisitive Full Stack Web Developer with knowledge of a wide
+            range of programming utilities and languages. Has relevant
+            hands-on experience in building websites from scratch. Seeking to
+            leverage broad development experience and hands-on technical
+            expertise.
+          </Text>
+        </Box>
       </Box>
 
       <Box width={["80%", "50%"]} margin="auto" paddingY="20px">
@@ -83,7 +75,7 @@ function Home() {
               margin="auto"
               objectFit="cover"
               width="80%"
-              src={require("./res/Profile.png")}
+              src={require("./res/Profile1.png")}
               alt="profile"
               borderRadius="20px"
             />
@@ -112,10 +104,9 @@ function Home() {
                   padding="10px 20px"
                 >
                   <a
-                    href="Prathamesh-Laxman-Rawool-Resume.pdf"
+                    href={BASE_RESUME_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    download
                   >
                     Resume
                   </a>

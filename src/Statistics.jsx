@@ -6,6 +6,7 @@ import {
   SimpleGrid,
   Text,
   useColorModeValue,
+  Heading,
 } from "@chakra-ui/react";
 import React from "react";
 import { Fade } from "react-awesome-reveal";
@@ -17,9 +18,26 @@ const Statistics = () => {
 
   return (
     <Box bg={bg} color={color} paddingY={"30px"} paddingTop={"80px"} id="stat">
-      <Text textAlign={"center"} fontSize="3xl" paddingY={"30px"}>
-        DAYS I CODE
-      </Text>
+      <Flex direction="column" align="center" justify="center" mb={10}>
+        <Heading
+          fontSize={{ base: "3xl", md: "5xl" }}
+          fontWeight="bold"
+          mb={4}
+          color={color}
+          textAlign="center"
+        >
+          Coding Contributions
+        </Heading>
+        <Text
+          fontSize={{ base: "sm", md: "lg" }}
+          color={useColorModeValue("gray.600", "gray.300")}
+          maxW="600px"
+          textAlign="center"
+          px={4}
+        >
+          An overview of my daily coding activity, commit stats, and technology metrics on GitHub.
+        </Text>
+      </Flex>
 
       <motion.div
         initial={{ opacity: 0 }}

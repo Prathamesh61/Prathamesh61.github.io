@@ -3,324 +3,108 @@ import {
   Button,
   Flex,
   HStack,
+  Icon,
   Img,
   SimpleGrid,
   Text,
   Tooltip,
   useColorModeValue,
   VStack,
+  Heading,
 } from "@chakra-ui/react";
 import React from "react";
 import { FaLink } from "react-icons/fa";
 import { Fade } from "react-awesome-reveal";
+import {
+  SiReact,
+  SiStorybook,
+  SiTailwindcss,
+  SiCss3,
+  SiRedux,
+  SiNodedotjs,
+  SiServerless,
+  SiChakraui,
+  SiExpress,
+  SiMongodb,
+  SiJavascript,
+  SiHtml5,
+} from "react-icons/si";
+
+// Centralized icon and metadata configuration for technologies
+const TECH_ICONS = {
+  react: { alt: "React", icon: SiReact },
+  storybook: { alt: "Storybook", icon: SiStorybook },
+  tailwind: { alt: "Tailwind CSS", icon: SiTailwindcss },
+  css: { alt: "CSS", icon: SiCss3 },
+  redux: { alt: "Redux", icon: SiRedux },
+  "react-native": { alt: "React Native", icon: SiReact },
+  node: { alt: "Node-js", icon: SiNodedotjs },
+  serverless: { alt: "Serverless", icon: SiServerless },
+  chakra: { alt: "Chakra UI", icon: SiChakraui },
+  express: { alt: "Express-js", icon: SiExpress },
+  mongodb: { alt: "Mongo-DB", icon: SiMongodb },
+  javascript: { alt: "Javascript", icon: SiJavascript },
+  html: { alt: "HTML", icon: SiHtml5 },
+};
 
 const Projects = () => {
   const projectsArr = [
+    // {
+    //   title: "Bonify Style Kit",
+    //   banner: require("./res/other/bsk-storybook-banner.png"),
+    //   description:
+    //     "A ReactJS UI Library for Dynamic Components created using Storybook, Shadcn and tailwind CSS",
+    //   technologies: ["react", "storybook", "tailwind"],
+    //   live: "https://frontend-pi-lovat.vercel.app/",
+    // },
+    // {
+    //   title: "Contract Wallet Feature",
+    //   banner: require("./res/other/contractWallet-banner.jpeg"),
+    //   description:
+    //     "Fintech Solution for Bonify where we can Manage user expense contracts, including five types: Mobile Bills, Loans, Electricity, Insurance, and Credit Card.",
+    //   technologies: ["react", "redux", "tailwind", "react-native", "node", "serverless"],
+    //   live: "https://contracts-bonify.de",
+    // },
+    // {
+    //   title: "Parag Unify Crafts",
+    //   banner: require("./res/other/paragunifycrafts-banner.jpeg"),
+    //   description:
+    //     "Parag Unify Crafts is an e-commerce platform specializing in high-quality kitchenware such as cutlery, cooking spoons, racks, and utility stands.",
+    //   technologies: ["react", "redux", "chakra", "node", "express", "mongodb"],
+    //   live: "https://paragunifycrafts.co.in/",
+    // },
+    // {
+    //   title: "Goozzby",
+    //   banner: require("./res/other/goozzby-banner.jpeg"),
+    //   description:
+    //     "Goozzby is a platform connecting users with trusted professionals for residential and commercial services, similar to the UrbanClap model.",
+    //   technologies: ["react", "redux", "chakra", "node", "express", "mongodb"],
+    //   live: "https://dashboard.goozzby.com/",
+    // },
+
     {
-      title: "Bonify Style Kit",
-      banner: require("./res/other/bsk-storybook-banner.png"),
+      title: "Haire",
+      banner: require("./res/other/haire-banner.jpeg"),
       description:
-        "A ReactJS UI Library for Dynamic Components created using Storybook, Shadcn and tailwind CSS",
-      techBlue: [
-        {
-          image: require("./res/blue/atom.png"),
-          alt: "React",
-        },
-        {
-          image: require("./res/blue/storybook.png"),
-          alt: "Storybook",
-        },
-        {
-          image: require("./res/blue/css-3.png"),
-          alt: "taiwind CSS",
-        },
-      ],
-      techYellow: [
-        {
-          image: require("./res/yellow/atom.png"),
-          alt: "React",
-        },
-        {
-          image: require("./res/yellow/storybook.png"),
-          alt: "Storybook",
-        },
-        {
-          image: require("./res/yellow/css-3.png"),
-          alt: "tailwind CSS",
-        },
-      ],
-      live: "https://frontend-pi-lovat.vercel.app/",
-    },
-    {
-      title: "Contract Wallet Feature",
-      banner: require("./res/other/contractWallet-banner.jpeg"),
-      description:
-        "Fintech Solution for Bonify where we can Manage user expense contracts, including five types: Mobile Bills, Loans, Electricity, Insurance, and Credit Card.",
-      techBlue: [
-        {
-          image: require("./res/blue/atom.png"),
-          alt: "React",
-        },
-        {
-          image: require("./res/blue/redux.png"),
-          alt: "Redux",
-        },
-        {
-          image: require("./res/blue/css-3.png"),
-          alt: "taiwind CSS",
-        },
-        {
-          image: require("./res/blue/atom.png"),
-          alt: "React Native",
-        },
-        {
-          image: require("./res/blue/node-js.png"),
-          alt: "Node-js",
-        },
-        {
-          image: require("./res/blue/serverless.png"),
-          alt: "Serverless",
-        },
-      ],
-      techYellow: [
-        {
-          image: require("./res/yellow/atom.png"),
-          alt: "React",
-        },
-        {
-          image: require("./res/yellow/redux.png"),
-          alt: "Redux",
-        },
-        {
-          image: require("./res/yellow/css-3.png"),
-          alt: "taiwind CSS",
-        },
-        {
-          image: require("./res/yellow/atom.png"),
-          alt: "React Native",
-        },
-        {
-          image: require("./res/yellow/nodejs.png"),
-          alt: "Node-js",
-        },
-        {
-          image: require("./res/yellow/serverless.png"),
-          alt: "Serverless",
-        },
-      ],
-      live: "https://frontend-pi-lovat.vercel.app/",
-    },
-    {
-      title: "Parag Unify Crafts",
-      banner: require("./res/other/paragunifycrafts-banner.jpeg"),
-      description:
-        "Parag Unify Crafts is an e-commerce platform specializing in high-quality kitchenware such as cutlery, cooking spoons, racks, and utility stands.",
-      techBlue: [
-        {
-          image: require("./res/blue/atom.png"),
-          alt: "React",
-        },
-        {
-          image: require("./res/blue/redux.png"),
-          alt: "Redux",
-        },
-        {
-          image: require("./res/blue/chakra-ui.png"),
-          alt: "Chakra UI",
-        },
-        {
-          image: require("./res/blue/node-js.png"),
-          alt: "Node-js",
-        },
-        {
-          image: require("./res/blue/express.png"),
-          alt: "Express-js",
-        },
-        {
-          image: require("./res/blue/mongodb.png"),
-          alt: "Mongo-DB",
-        },
-      ],
-      techYellow: [
-        {
-          image: require("./res/yellow/atom.png"),
-          alt: "React",
-        },
-        {
-          image: require("./res/yellow/redux.png"),
-          alt: "Redux",
-        },
-        {
-          image: require("./res/yellow/chakra-ui.png"),
-          alt: "chakra UI",
-        },
-        {
-          image: require("./res/yellow/nodejs.png"),
-          alt: "Node-js",
-        },
-        {
-          image: require("./res/yellow/express.png"),
-          alt: "Express-js",
-        },
-        {
-          image: require("./res/yellow/mongodb.png"),
-          alt: "Mongo-DB",
-        },
-      ],
-      live: "https://paragunifycrafts.co.in/",
-    },
-    {
-      title: "Goozzby",
-      banner: require("./res/other/goozzby-banner.jpeg"),
-      description:
-        "Goozzby is a platform connecting users with trusted professionals for residential and commercial services, similar to the UrbanClap model.",
-      techBlue: [
-        {
-          image: require("./res/blue/atom.png"),
-          alt: "React",
-        },
-        {
-          image: require("./res/blue/redux.png"),
-          alt: "Redux",
-        },
-        {
-          image: require("./res/blue/chakra-ui.png"),
-          alt: "Chakra UI",
-        },
-        {
-          image: require("./res/blue/node-js.png"),
-          alt: "Node-js",
-        },
-        {
-          image: require("./res/blue/express.png"),
-          alt: "Express-js",
-        },
-        {
-          image: require("./res/blue/mongodb.png"),
-          alt: "Mongo-DB",
-        },
-      ],
-      techYellow: [
-        {
-          image: require("./res/yellow/atom.png"),
-          alt: "React",
-        },
-        {
-          image: require("./res/yellow/redux.png"),
-          alt: "Redux",
-        },
-        {
-          image: require("./res/yellow/chakra-ui.png"),
-          alt: "chakra UI",
-        },
-        {
-          image: require("./res/yellow/nodejs.png"),
-          alt: "Node-js",
-        },
-        {
-          image: require("./res/yellow/express.png"),
-          alt: "Express-js",
-        },
-        {
-          image: require("./res/yellow/mongodb.png"),
-          alt: "Mongo-DB",
-        },
-      ],
-      live: "https://dashboard.goozzby.com/",
+        "Haire is an AI-Powered Recruitment and Interview Platform. where the hiring workflow can be streamlined using AI and also AI-Powered Interview that conducts interviews based on the Job Description and Resume provided.",
+      technologies: ["react", "redux", "css", "html", "javascript"],
+      live: "https://haire.ai/",
     },
     {
       title: "Licious.com Clone",
       banner: require("./res/other/Licious.png"),
       description:
         "Licious is India's largest D2C Unicorn. The company operates on a farm-to-fork model, owning the entire back-end supply chain and cold chain. It has Products like Meat, seafood, ready-to-cook and ready-to-eat meals",
-      techBlue: [
-        {
-          image: require("./res/blue/atom.png"),
-          alt: "React",
-        },
-        {
-          image: require("./res/blue/mongodb.png"),
-          alt: "MongoDb",
-        },
-        {
-          image: require("./res/blue/node-js.png"),
-          alt: "Node-js",
-        },
-        {
-          image: require("./res/blue/redux.png"),
-          alt: "Redux",
-        },
-        {
-          image: require("./res/blue/express.png"),
-          alt: "Express",
-        },
-        {
-          image: require("./res/blue/chakra-ui.png"),
-          alt: "Chakra UI",
-        },
-      ],
-      techYellow: [
-        {
-          image: require("./res/yellow/atom.png"),
-          alt: "React",
-        },
-        {
-          image: require("./res/yellow/mongodb.png"),
-          alt: "MongoDb",
-        },
-        {
-          image: require("./res/yellow/nodejs.png"),
-          alt: "Node-js",
-        },
-        {
-          image: require("./res/yellow/redux.png"),
-          alt: "Redux",
-        },
-        {
-          image: require("./res/yellow/express.png"),
-          alt: "Express",
-        },
-        {
-          image: require("./res/yellow/chakra-ui.png"),
-          alt: "Chakra UI",
-        },
-      ],
+      technologies: ["react", "mongodb", "node", "redux", "express", "chakra"],
       github: "https://github.com/Prathamesh61/coherent-laborer-2044",
-      live: "https://frontend-pi-lovat.vercel.app/",
+      live: "https://d-licious.vercel.app/",
     },
     {
       title: "Boat-LifeStyle Clone",
       banner: require("./res/other/Boat-banner.jpeg"),
       description:
         "BoAt is an India-based consumer electronics brand established in 2015 that markets earphones, headphones stereos, travel chargers and premium rugged cables.",
-      techYellow: [
-        {
-          image: require("./res/yellow/java-script.png"),
-          alt: "Javascript",
-        },
-        {
-          image: require("./res/yellow/html.png"),
-          alt: "HTML",
-        },
-        {
-          image: require("./res/yellow/css-3.png"),
-          alt: "CSS",
-        },
-      ],
-      techBlue: [
-        {
-          image: require("./res/blue/java-script.png"),
-          alt: "Javascript",
-        },
-        {
-          image: require("./res/blue/html.png"),
-          alt: "HTML",
-        },
-        {
-          image: require("./res/blue/css-3.png"),
-          alt: "CSS",
-        },
-      ],
+      technologies: ["javascript", "html", "css"],
       github: "https://github.com/hariohmtripathi/Boat-Lifestyle-",
       live: "https://friendly-cajeta-33faab.netlify.app/",
     },
@@ -329,35 +113,7 @@ const Projects = () => {
       banner: require("./res/other/sephora-banner.jpeg"),
       description:
         "Sephora is a French multinational retailer of personal care and beauty products. Sephora offers beauty products including cosmetics, skincare, body, fragrance, and many more.",
-      techYellow: [
-        {
-          image: require("./res/yellow/java-script.png"),
-          alt: "Javascript",
-        },
-        {
-          image: require("./res/yellow/html.png"),
-          alt: "HTML",
-        },
-        {
-          image: require("./res/yellow/css-3.png"),
-          alt: "CSS",
-        },
-      ],
-      techBlue: [
-        {
-          image: require("./res/blue/java-script.png"),
-          alt: "Javascript",
-        },
-        {
-          image: require("./res/blue/html.png"),
-          alt: "HTML",
-        },
-        {
-          image: require("./res/blue/css-3.png"),
-          alt: "CSS",
-        },
-      ],
-
+      technologies: ["javascript", "html", "css"],
       github: "https://github.com/krajeet35/Project--miscreant-punishment-3547",
       live: "https://euphonious-bubblegum-8add69.netlify.app/",
     },
@@ -366,26 +122,7 @@ const Projects = () => {
       banner: require("./res/other/naukri-banner.jpeg"),
       description:
         "Naukri.com is a recruitment platform that provides hiring-related services to corporates/recruiters, placement agencies, and job seekers in India and overseas.",
-      techBlue: [
-        {
-          image: require("./res/blue/atom.png"),
-          alt: "React",
-        },
-        {
-          image: require("./res/blue/chakra-ui.png"),
-          alt: "Chakra UI",
-        },
-      ],
-      techYellow: [
-        {
-          image: require("./res/yellow/atom.png"),
-          alt: "React",
-        },
-        {
-          image: require("./res/yellow/chakra-ui.png"),
-          alt: "Chakra UI",
-        },
-      ],
+      technologies: ["react", "chakra"],
       github: "https://github.com/Prathamesh61/sick-dress-4939",
       live: "https://mynaukri.vercel.app/",
     },
@@ -394,34 +131,7 @@ const Projects = () => {
       banner: require("./res/other/tripAdvisor-banner.jpeg"),
       description:
         "Tripadvisor, Inc. is an American online travel company that offers online hotel reservations and bookings for transportation, lodging, travel experiences, and restaurants.",
-      techBlue: [
-        {
-          image: require("./res/blue/atom.png"),
-          alt: "React",
-        },
-        {
-          image: require("./res/blue/redux.png"),
-          alt: "Redux",
-        },
-        {
-          image: require("./res/blue/chakra-ui.png"),
-          alt: "Chakra UI",
-        },
-      ],
-      techYellow: [
-        {
-          image: require("./res/yellow/atom.png"),
-          alt: "React",
-        },
-        {
-          image: require("./res/yellow/redux.png"),
-          alt: "Redux",
-        },
-        {
-          image: require("./res/yellow/chakra-ui.png"),
-          alt: "Chakra UI",
-        },
-      ],
+      technologies: ["react", "redux", "chakra"],
       github: "https://github.com/pallu2108/sedate-toys-1304",
       live: "https://trip-advisor-clone.vercel.app/",
     },
@@ -432,12 +142,30 @@ const Projects = () => {
 
   return (
     <Box py="30px" pt="80px" bg={bg} color={color} id="Projects">
-      <Text textAlign="center" fontSize="3xl" color={color}>
-        Projects
-      </Text>
-      <VStack py="30px" width="70%" mx="auto" gap="50px">
+      <Flex direction="column" align="center" justify="center" mb={14}>
+        <Heading
+          fontSize={{ base: "3xl", md: "5xl" }}
+          fontWeight="bold"
+          mb={4}
+          color={color}
+          textAlign="center"
+        >
+          Featured Projects
+        </Heading>
+        <Text
+          fontSize={{ base: "sm", md: "lg" }}
+          color={useColorModeValue("gray.600", "gray.300")}
+          maxW="600px"
+          textAlign="center"
+          px={4}
+        >
+          A curated selection of applications and platforms I have built from scratch.
+        </Text>
+      </Flex>
+      <VStack py="30px" width={{ base: "92%", md: "80%", lg: "70%" }} mx="auto" gap={{ base: "32px", md: "50px" }}>
         {projectsArr.map((project, index) => (
           <Fade
+            key={index}
             direction={index % 2 === 0 ? "left" : "right"}
             cascade
             triggerOnce={false}
@@ -446,7 +174,7 @@ const Projects = () => {
             <HStack className="hvr-grow-shadow">
               <SimpleGrid
                 columns={[1, 1, 1, 2]}
-                p="40px"
+                p={{ base: "16px", md: "28px", lg: "40px" }}
                 justifyContent="center"
                 alignItems="center"
                 gap="20px"
@@ -455,7 +183,7 @@ const Projects = () => {
                 boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
                 borderRadius="15px"
               >
-                <Box overflowY="hidden" h="300px">
+                <Box overflowY="hidden" h={{ base: "200px", md: "260px", lg: "300px" }}>
                   <Img
                     border="3px solid"
                     borderColor={color}
@@ -466,10 +194,10 @@ const Projects = () => {
                   />
                 </Box>
                 <VStack alignSelf="flex-start">
-                  <Text fontSize="2xl" color={color} textAlign="center">
+                  <Text fontSize={{ base: "xl", md: "2xl" }} color={color} textAlign="center">
                     {project.title}
                   </Text>
-                  <Text fontSize="18px" align="center">
+                  <Text fontSize={{ base: "14px", md: "16px", lg: "18px" }} align="center">
                     {project.description}
                   </Text>
                   <Flex
@@ -479,20 +207,22 @@ const Projects = () => {
                     py="20px"
                     alignSelf="center"
                   >
-                    {(bg === "white"
-                      ? project.techBlue
-                      : project.techYellow
-                    ).map((tech) => (
-                      <Tooltip label={tech?.alt}>
-                        <Img
-                          className="hvr-pop"
-                          alignSelf="start"
-                          width="30px"
-                          src={tech.image}
-                          alt={tech.alt}
-                        />
-                      </Tooltip>
-                    ))}
+                    {project.technologies.map((techKey) => {
+                      const tech = TECH_ICONS[techKey];
+                      if (!tech) return null;
+                      return (
+                        <Tooltip key={techKey} label={tech.alt}>
+                          <span>
+                            <Icon
+                              className="hvr-pop"
+                              as={tech.icon}
+                              boxSize="30px"
+                              color={color}
+                            />
+                          </span>
+                        </Tooltip>
+                      );
+                    })}
                   </Flex>
                   <HStack>
                     {project.github && (

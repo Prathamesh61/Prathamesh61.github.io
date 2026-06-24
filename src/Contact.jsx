@@ -6,6 +6,8 @@ import {
   Link,
   Text,
   useColorModeValue,
+  Flex,
+  Heading,
 } from "@chakra-ui/react";
 import React from "react";
 import { Fade } from "react-awesome-reveal";
@@ -52,13 +54,27 @@ const Contact = () => {
         ];
 
   return (
-    <Box bg={bg} color={color} py="30px" pt="80px" id="Contact">
-      {/* Section Header */}
-      <Fade direction="up" duration={1000} triggerOnce>
-        <Text py="30px" fontSize="3xl" color={color} textAlign="center">
+    <Box bg={bg} color={color} pt="80px" pb={{ base: "60px", md: "80px" }} id="Contact">
+      <Flex direction="column" align="center" justify="center" mb={10}>
+        <Heading
+          fontSize={{ base: "3xl", md: "5xl" }}
+          fontWeight="bold"
+          mb={4}
+          color={color}
+          textAlign="center"
+        >
           Get in Touch
+        </Heading>
+        <Text
+          fontSize={{ base: "sm", md: "lg" }}
+          color={useColorModeValue("gray.600", "gray.300")}
+          maxW="600px"
+          textAlign="center"
+          px={4}
+        >
+          Feel free to reach out for collaborations, job opportunities, or just to say hello!
         </Text>
-      </Fade>
+      </Flex>
 
       {/* Social Links */}
       <Fade direction="left" duration={1200} triggerOnce>
