@@ -305,11 +305,11 @@ const Skills = () => {
         <Text
           fontSize={{ base: "sm", md: "lg" }}
           color={useColorModeValue("gray.600", "gray.300")}
-          maxW="600px"
+          maxW="800px"
           textAlign="center"
           px={4}
         >
-          Hover over the central cores or individual skills to explore my technical and professional capabilities.
+          Explore the interactive skill constellations below to discover my technical expertise and professional capabilities.
         </Text>
       </Flex>
 

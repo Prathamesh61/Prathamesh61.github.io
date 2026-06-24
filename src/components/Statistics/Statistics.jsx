@@ -31,7 +31,7 @@ const Statistics = () => {
         <Text
           fontSize={{ base: "sm", md: "lg" }}
           color={useColorModeValue("gray.600", "gray.300")}
-          maxW="600px"
+          maxW="900px"
           textAlign="center"
           px={4}
         >

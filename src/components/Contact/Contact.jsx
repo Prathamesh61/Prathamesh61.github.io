@@ -68,7 +68,7 @@ const Contact = () => {
         <Text
           fontSize={{ base: "sm", md: "lg" }}
           color={useColorModeValue("gray.600", "gray.300")}
-          maxW="600px"
+          maxW="800px"
           textAlign="center"
           px={4}
         >
