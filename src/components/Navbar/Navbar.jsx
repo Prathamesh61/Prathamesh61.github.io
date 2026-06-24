@@ -11,8 +11,8 @@ import { FaTimes, FaBars } from "react-icons/fa";
 import { useRef } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { Link } from "react-scroll";
-import Prathamesh_Logo from "./res/other/Prathamesh_Logo.png";
-import { BASE_RESUME_URL } from "./util";
+import Prathamesh_Logo from "../../res/other/Prathamesh_Logo.png";
+import { BASE_RESUME_URL } from "../../util";
 
 export const Navbar = () => {
   const navRef = useRef();

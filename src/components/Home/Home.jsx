@@ -88,7 +88,7 @@ function Home() {
               margin="auto"
               objectFit="cover"
               width="80%"
-              src={require("./res/Profile1.png")}
+              src={require("../../res/Profile1.png")}
               alt="profile"
               borderRadius={["15px", "18px", "20px"]}
             />
