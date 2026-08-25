@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { Fade, Zoom, Bounce } from "react-awesome-reveal";
 import TypewriterComponent from "typewriter-effect";
-import { BASE_RESUME_URL } from "../../util";
+import { BASE_RESUME_URL, trackEvent } from "../../util";
 
 function Home() {
   const bg = useColorModeValue("white", "#10264f");
@@ -124,6 +124,7 @@ function Home() {
                     href={BASE_RESUME_URL}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackEvent("resume_click", { location: "home" })}
                   >
                     Resume
                   </a>

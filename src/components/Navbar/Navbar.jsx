@@ -12,7 +12,7 @@ import { useRef } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { Link } from "react-scroll";
 import Prathamesh_Logo from "../../res/other/Prathamesh_Logo.png";
-import { BASE_RESUME_URL } from "../../util";
+import { BASE_RESUME_URL, trackEvent } from "../../util";
 
 export const Navbar = () => {
   const navRef = useRef();
@@ -53,7 +53,10 @@ export const Navbar = () => {
             spy={true}
             smooth={true}
             offset={-80}
-            onClick={showNavbar}
+            onClick={() => {
+              showNavbar();
+              trackEvent("navbar_click", { section: "Home" });
+            }}
           >
             <a className="hvr-underline-from-center" href="#">
               Home
@@ -65,7 +68,10 @@ export const Navbar = () => {
             spy={true}
             smooth={true}
             offset={-80}
-            onClick={showNavbar}
+            onClick={() => {
+              showNavbar();
+              trackEvent("navbar_click", { section: "Work Experience" });
+            }}
           >
             <a className="hvr-underline-from-center" href="#">
               Work Experience
@@ -77,7 +83,10 @@ export const Navbar = () => {
             spy={true}
             smooth={true}
             offset={-80}
-            onClick={showNavbar}
+            onClick={() => {
+              showNavbar();
+              trackEvent("navbar_click", { section: "Tech Stack" });
+            }}
           >
             <a className="hvr-underline-from-center" href="#">
               Tech Stack
@@ -89,7 +98,10 @@ export const Navbar = () => {
             spy={true}
             smooth={true}
             offset={-80}
-            onClick={showNavbar}
+            onClick={() => {
+              showNavbar();
+              trackEvent("navbar_click", { section: "Skills" });
+            }}
           >
             <a className="hvr-underline-from-center" href="#">
               Skills
@@ -101,7 +113,10 @@ export const Navbar = () => {
             spy={true}
             smooth={true}
             offset={-80}
-            onClick={showNavbar}
+            onClick={() => {
+              showNavbar();
+              trackEvent("navbar_click", { section: "Projects" });
+            }}
           >
             <a className="hvr-underline-from-center" href="#">
               Projects
@@ -113,7 +128,10 @@ export const Navbar = () => {
             spy={true}
             smooth={true}
             offset={-80}
-            onClick={showNavbar}
+            onClick={() => {
+              showNavbar();
+              trackEvent("navbar_click", { section: "Contact" });
+            }}
           >
             <a className="hvr-underline-from-center" href="#">
               Contact
@@ -126,6 +144,7 @@ export const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="hvr-underline-from-center"
+            onClick={() => trackEvent("resume_click", { location: "navbar" })}
           >
             <Button color={color}>
               Resume
@@ -138,7 +157,10 @@ export const Navbar = () => {
               bg="blackAlpha.100"
               color="#10264f"
               _hover={{ bg: "blackAlpha.200" }}
-              onClick={toggleColorMode}
+              onClick={() => {
+                toggleColorMode();
+                trackEvent("theme_toggle", { mode: "dark" });
+              }}
               icon={<FaMoon />}
               aria-label="Switch to dark mode"
             />
@@ -147,7 +169,10 @@ export const Navbar = () => {
               bg="whiteAlpha.200"
               color="white"
               _hover={{ bg: "whiteAlpha.300" }}
-              onClick={toggleColorMode}
+              onClick={() => {
+                toggleColorMode();
+                trackEvent("theme_toggle", { mode: "light" });
+              }}
               borderRadius={"50%"}
               icon={<FaSun />}
               aria-label="Switch to light mode"

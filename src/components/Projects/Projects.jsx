@@ -13,6 +13,7 @@ import {
 import React, { useMemo } from "react";
 import { FaLink } from "react-icons/fa";
 import { Fade } from "react-awesome-reveal";
+import { trackEvent } from "../../util";
 
 // Sample image import (recommend importing statically at the top)
 import bskBanner from "../../res/other/bsk-storybook-banner.png";
@@ -297,6 +298,13 @@ const Projects = () => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() =>
+                          trackEvent("project_link_click", {
+                            project_title: project.title,
+                            type: "Github",
+                            url: project.github,
+                          })
+                        }
                       >
                         <Button
                           className="hvr-underline-from-center"
@@ -313,6 +321,13 @@ const Projects = () => {
                             href={el.link}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={() =>
+                              trackEvent("project_link_click", {
+                                project_title: project.title,
+                                type: el.name || "Live",
+                                url: el.link,
+                              })
+                            }
                           >
                             <Button
                               className="hvr-underline-from-center"

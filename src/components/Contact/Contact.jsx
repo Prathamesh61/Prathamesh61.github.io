@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { Fade } from "react-awesome-reveal";
+import { trackEvent } from "../../util";
 
 const Contact = () => {
   const bg = useColorModeValue("white", "#10264f");
@@ -92,6 +93,7 @@ const Contact = () => {
               href={el.link}
               target="_blank"
               _hover={{ transform: "scale(1.1)", transition: "0.3s ease" }}
+              onClick={() => trackEvent("social_link_click", { platform: el.alt, url: el.link })}
             >
               <Img
                 w="100%"
@@ -115,7 +117,11 @@ const Contact = () => {
         >
           <Text fontSize={["sm", "md", "lg"]} color={color}>
             Email:{" "}
-            <Link href="mailto:prathameshrawool411@gmail.com" color={color}>
+            <Link
+              href="mailto:prathameshrawool411@gmail.com"
+              color={color}
+              onClick={() => trackEvent("contact_click", { type: "email", url: "mailto:prathameshrawool411@gmail.com" })}
+            >
               prathameshrawool411@gmail.com
             </Link>
           </Text>
