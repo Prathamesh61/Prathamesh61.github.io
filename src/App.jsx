@@ -11,6 +11,7 @@ import Home from "./components/Home/Home";
 import TechStack from "./TechStack";
 import Projects from "./Projects";
 import Contact from "./components/Contact/Contact";
+import CollaborationCTA from "./components/CollaborationCTA/CollaborationCTA";
 import Statistics from "./components/Statistics/Statistics";
 import Skills from "./Skills";
 import WorkExperience from "./components/WorkExperience/WorkExperience";
@@ -55,6 +56,7 @@ function App() {
       <Skills />
       <Projects />
       <Statistics />
+      <CollaborationCTA />
       <Contact />
     </div>
   );

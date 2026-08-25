@@ -230,6 +230,61 @@ const Projects = () => {
   const containerRef = useRef(null);
   const scrollRef = useRef(null);
 
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const xc = rect.width / 2;
+    const yc = rect.height / 2;
+    const dx = x - xc;
+    const dy = y - yc;
+    
+    // Rotate card in 3D space (max 8 degrees)
+    const rx = -(dy / yc) * 8;
+    const ry = (dx / xc) * 8;
+    
+    gsap.to(card, {
+      rotateX: rx,
+      rotateY: ry,
+      transformPerspective: 1000,
+      ease: "power3.out",
+      duration: 0.4,
+    });
+    
+    // Parallax shift the card's inner image (translate opposite direction, max 12px)
+    const imgContainer = card.querySelector(".project-img-container");
+    if (imgContainer) {
+      gsap.to(imgContainer, {
+        x: -(dx / xc) * 12,
+        y: -(dy / yc) * 12,
+        ease: "power3.out",
+        duration: 0.4,
+      });
+    }
+  };
+
+  const handleMouseLeave = (e) => {
+    const card = e.currentTarget;
+    gsap.to(card, {
+      rotateX: 0,
+      rotateY: 0,
+      ease: "power3.out",
+      duration: 0.5,
+    });
+    
+    const imgContainer = card.querySelector(".project-img-container");
+    if (imgContainer) {
+      gsap.to(imgContainer, {
+        x: 0,
+        y: 0,
+        ease: "power3.out",
+        duration: 0.5,
+      });
+    }
+  };
+
   useGSAP(() => {
     // Parallax background text scroll
     gsap.to(".gsap-bg-text-projects", {
@@ -329,8 +384,14 @@ const Projects = () => {
             className="gsap-project-card"
             width={{ base: "100%", md: "550px", lg: "650px" }}
             flexShrink={0}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{
+              transformStyle: "preserve-3d",
+              transformPerspective: 1000,
+            }}
           >
-            <HStack className="hvr-grow-shadow" h="100%">
+            <HStack h="100%">
               <SimpleGrid
                 columns={1}
                 p={{ base: "16px", md: "24px", lg: "32px" }}
@@ -345,7 +406,7 @@ const Projects = () => {
                 backdropFilter="blur(16px)"
                 w="100%"
               >
-                <Box overflowY="hidden" h={{ base: "180px", md: "220px" }}>
+                <Box className="project-img-container" overflowY="hidden" h={{ base: "180px", md: "220px" }}>
                   <Img
                     border="3px solid"
                     borderColor={color}
