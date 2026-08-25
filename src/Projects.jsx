@@ -12,9 +12,11 @@ import {
   VStack,
   Heading,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useRef } from "react";
 import { FaLink } from "react-icons/fa";
-import { Fade } from "react-awesome-reveal";
+import { trackEvent } from "./util";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import {
   SiReact,
   SiStorybook,
@@ -225,9 +227,35 @@ const Projects = () => {
 
   const bg = useColorModeValue("white", "#10264f");
   const color = useColorModeValue("#10264f", "white");
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    const cards = gsap.utils.toArray(".gsap-project-card");
+    cards.forEach((card, index) => {
+      const xOffset = index % 2 === 0 ? -100 : 100;
+      gsap.fromTo(
+        card,
+        {
+          opacity: 0,
+          x: xOffset,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+  }, { scope: containerRef });
 
   return (
-    <Box py="30px" pt="80px" bg={bg} color={color} id="Projects">
+    <Box ref={containerRef} py="30px" pt="80px" bg={bg} color={color} id="Projects">
       <Flex direction="column" align="center" justify="center" mb={14}>
         <Heading
           fontSize={{ base: "3xl", md: "5xl" }}
@@ -250,13 +278,7 @@ const Projects = () => {
       </Flex>
       <VStack py="30px" width={{ base: "92%", md: "80%", lg: "70%" }} mx="auto" gap={{ base: "32px", md: "50px" }}>
         {projectsArr.map((project, index) => (
-          <Fade
-            key={index}
-            direction={index % 2 === 0 ? "left" : "right"}
-            cascade
-            triggerOnce={false}
-            damping={0.2}
-          >
+          <Box key={index} className="gsap-project-card" width="100%">
             <HStack className="hvr-grow-shadow">
               <SimpleGrid
                 columns={[1, 1, 1, 2]}
@@ -316,6 +338,13 @@ const Projects = () => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() =>
+                          trackEvent("project_link_click", {
+                            project_title: project.title,
+                            type: "Github",
+                            url: project.github,
+                          })
+                        }
                       >
                         <Button
                           className="hvr-underline-from-center"
@@ -333,6 +362,13 @@ const Projects = () => {
                             href={el.link}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={() =>
+                              trackEvent("project_link_click", {
+                                project_title: project.title,
+                                type: el.name || "Live",
+                                url: el.link,
+                              })
+                            }
                           >
                             <Button
                               className="hvr-underline-from-center"
@@ -347,7 +383,7 @@ const Projects = () => {
                 </VStack>
               </SimpleGrid>
             </HStack>
-          </Fade>
+          </Box>
         ))}
       </VStack>
     </Box>

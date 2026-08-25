@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Box,
   Flex,
@@ -12,6 +12,8 @@ import {
 } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaCalendarAlt, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { keyframes } from "@emotion/react";
 
 const MotionBox = motion(Box);
@@ -147,6 +149,31 @@ const WorkExperience = () => {
   const color = useColorModeValue("#10264f", "white");
   const borderColor = useColorModeValue("rgba(16, 38, 79, 0.08)", "rgba(255, 255, 255, 0.06)");
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    const cards = gsap.utils.toArray(".gsap-experience-card");
+    cards.forEach((card) => {
+      gsap.fromTo(
+        card,
+        {
+          opacity: 0,
+          y: 50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+  }, { scope: containerRef });
 
   // States for active selectors and animation direction
   const [activeIndexes, setActiveIndexes] = useState({ 0: 0, 1: 0 });
@@ -234,7 +261,7 @@ const WorkExperience = () => {
   }, [activeIndexes]);
 
   return (
-    <Box py="50px" pt="80px" bg={bg} color={color} id="workExperience">
+    <Box ref={containerRef} py="50px" pt="80px" bg={bg} color={color} id="workExperience">
       <Flex direction="column" align="center" justify="center" mb={14}>
         <Heading
           fontSize={{ base: "3xl", md: "5xl" }}
@@ -299,7 +326,7 @@ const WorkExperience = () => {
             );
 
             return (
-              <Box key={index} position="relative">
+              <Box key={index} position="relative" className="gsap-experience-card">
                 {/* Timeline Dot Node */}
                 <Box
                   position="absolute"

@@ -1,4 +1,10 @@
 import "./App.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
+
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import TechStack from "./TechStack";
