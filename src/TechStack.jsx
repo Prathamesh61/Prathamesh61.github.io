@@ -16,7 +16,7 @@ import {
 import { FaAws } from "react-icons/fa";
 
 const TechStack = () => {
-  const bg = useColorModeValue("white", "#10264f");
+  const bg = useColorModeValue("#f8fafc", "#0b132b");
   const color = useColorModeValue("#10264f", "white");
   const iconColor = useColorModeValue("#10264f", "#f0e130");
 

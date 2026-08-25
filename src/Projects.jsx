@@ -225,14 +225,15 @@ const Projects = () => {
     */
   ];
 
-  const bg = useColorModeValue("white", "#10264f");
+  const bg = useColorModeValue("#f8fafc", "#0b132b");
   const color = useColorModeValue("#10264f", "white");
   const containerRef = useRef(null);
+  const scrollRef = useRef(null);
 
   useGSAP(() => {
     // Parallax background text scroll
     gsap.to(".gsap-bg-text-projects", {
-      x: "15%",
+      x: "-10%",
       ease: "none",
       scrollTrigger: {
         trigger: containerRef.current,
@@ -242,42 +243,57 @@ const Projects = () => {
       },
     });
 
-    // 3D card reveals
-    const cards = gsap.utils.toArray(".gsap-project-card");
-    cards.forEach((card, index) => {
-      const xOffset = index % 2 === 0 ? -60 : 60;
-      const rotateValue = index % 2 === 0 ? -3 : 3;
-      gsap.fromTo(
-        card,
-        {
-          opacity: 0,
-          x: xOffset,
-          y: 40,
-          scale: 0.95,
-          rotate: rotateValue,
-        },
-        {
-          opacity: 1,
-          x: 0,
-          y: 0,
-          scale: 1,
-          rotate: 0,
-          duration: 1.4,
-          ease: "power4.out",
+    const scrollEl = scrollRef.current;
+    if (!scrollEl) return;
+
+    let scrollTween;
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+
+    const setupTrigger = () => {
+      if (mediaQuery.matches) {
+        const scrollDistance = scrollEl.scrollWidth - window.innerWidth;
+        
+        scrollTween = gsap.to(scrollEl, {
+          x: -scrollDistance,
+          ease: "none",
           scrollTrigger: {
-            trigger: card,
-            start: "top 88%",
-            toggleActions: "play none none none",
+            trigger: containerRef.current,
+            pin: true,
+            start: "top top",
+            end: () => `+=${scrollDistance}`,
+            scrub: 1,
+            invalidateOnRefresh: true,
           },
-        }
-      );
-    });
+        });
+      } else {
+        gsap.set(scrollEl, { clearProps: "all" });
+      }
+    };
+
+    setupTrigger();
+
+    const handleResize = () => {
+      if (scrollTween) {
+        scrollTween.scrollTrigger?.kill();
+        scrollTween.kill();
+      }
+      setupTrigger();
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      if (scrollTween) {
+        scrollTween.scrollTrigger?.kill();
+        scrollTween.kill();
+      }
+    };
   }, { scope: containerRef });
 
   return (
-    <Box ref={containerRef} py="30px" pt="80px" bg={bg} color={color} id="Projects">
-      <Box className="gsap-bg-text gsap-bg-text-projects">PROJECTS</Box>
-      <Flex direction="column" align="center" justify="center" mb={14}>
+    <Box ref={containerRef} py="30px" pt="80px" bg={bg} color={color} id="Projects" overflow="hidden">
+      <Box className="gsap-bg-text gsap-bg-text-projects" left="50%" transform="translateX(-50%)">PROJECTS</Box>
+      <Flex direction="column" align="center" justify="center" mb={6} className="gsap-project-header">
         <Heading
           fontSize={{ base: "3xl", md: "5xl" }}
           fontWeight="bold"
@@ -297,13 +313,27 @@ const Projects = () => {
           A curated selection of applications and platforms I have built.
         </Text>
       </Flex>
-      <VStack py="30px" width={{ base: "92%", md: "80%", lg: "70%" }} mx="auto" gap={{ base: "32px", md: "50px" }}>
+      
+      <Flex
+        ref={scrollRef}
+        flexDirection={{ base: "column", md: "row" }}
+        gap={{ base: "32px", md: "60px" }}
+        px={{ base: "4%", md: "8%" }}
+        py="30px"
+        width={{ base: "100%", md: "max-content" }}
+        alignItems="center"
+      >
         {projectsArr.map((project, index) => (
-          <Box key={index} className="gsap-project-card" width="100%">
-            <HStack className="hvr-grow-shadow">
+          <Box
+            key={index}
+            className="gsap-project-card"
+            width={{ base: "100%", md: "550px", lg: "650px" }}
+            flexShrink={0}
+          >
+            <HStack className="hvr-grow-shadow" h="100%">
               <SimpleGrid
-                columns={[1, 1, 1, 2]}
-                p={{ base: "16px", md: "28px", lg: "40px" }}
+                columns={1}
+                p={{ base: "16px", md: "24px", lg: "32px" }}
                 justifyContent="center"
                 alignItems="center"
                 gap="20px"
@@ -311,29 +341,33 @@ const Projects = () => {
                 borderColor={color}
                 boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
                 borderRadius="15px"
+                bg={useColorModeValue("white", "#10264f")}
+                w="100%"
               >
-                <Box overflowY="hidden" h={{ base: "200px", md: "260px", lg: "300px" }}>
+                <Box overflowY="hidden" h={{ base: "180px", md: "220px" }}>
                   <Img
                     border="3px solid"
                     borderColor={color}
                     borderRadius="10px"
                     width="100%"
+                    height="100%"
+                    objectFit="cover"
                     src={project.banner}
                     alt={project.title}
                   />
                 </Box>
-                <VStack alignSelf="flex-start">
-                  <Text fontSize={{ base: "xl", md: "2xl" }} color={color} textAlign="center">
+                <VStack alignSelf="flex-start" spacing={3}>
+                  <Text fontSize={{ base: "xl", md: "2xl" }} color={color} fontWeight="bold" textAlign="center">
                     {project.title}
                   </Text>
-                  <Text fontSize={{ base: "14px", md: "16px", lg: "18px" }} align="center">
+                  <Text fontSize={{ base: "14px", md: "15px" }} align="center" noOfLines={3}>
                     {project.description}
                   </Text>
                   <Flex
                     flexWrap="wrap"
                     justifyContent="center"
                     gap="10px"
-                    py="20px"
+                    py="5px"
                     alignSelf="center"
                   >
                     {project.tech.map((techItem, i) => {
@@ -345,7 +379,7 @@ const Projects = () => {
                             <Icon
                               className="hvr-pop"
                               as={tech.icon}
-                              boxSize="30px"
+                              boxSize="26px"
                               color={color}
                             />
                           </span>
@@ -353,7 +387,7 @@ const Projects = () => {
                       );
                     })}
                   </Flex>
-                  <HStack>
+                  <HStack spacing={4}>
                     {project.github && (
                       <a
                         href={project.github}
@@ -370,6 +404,7 @@ const Projects = () => {
                         <Button
                           className="hvr-underline-from-center"
                           leftIcon={<FaLink />}
+                          size="sm"
                         >
                           Github
                         </Button>
@@ -394,6 +429,7 @@ const Projects = () => {
                             <Button
                               className="hvr-underline-from-center"
                               leftIcon={<FaLink />}
+                              size="sm"
                             >
                               {el.name || "Live"}
                             </Button>
@@ -406,7 +442,7 @@ const Projects = () => {
             </HStack>
           </Box>
         ))}
-      </VStack>
+      </Flex>
     </Box>
   );
 };
