@@ -152,17 +152,35 @@ const WorkExperience = () => {
   const containerRef = useRef(null);
 
   useGSAP(() => {
+    // Parallax background text scroll
+    gsap.to(".gsap-bg-text-experience", {
+      x: "-15%",
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#workExperience",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+      },
+    });
+
+    // 3D timeline card reveals
     const cards = gsap.utils.toArray(".gsap-experience-card");
-    cards.forEach((card) => {
+    cards.forEach((card, index) => {
+      const rotateVal = index % 2 === 0 ? -2 : 2;
       gsap.fromTo(
         card,
         {
           opacity: 0,
           y: 50,
+          rotate: rotateVal,
+          scale: 0.96,
         },
         {
           opacity: 1,
           y: 0,
+          rotate: 0,
+          scale: 1,
           duration: 1.2,
           ease: "power3.out",
           scrollTrigger: {
@@ -262,6 +280,7 @@ const WorkExperience = () => {
 
   return (
     <Box ref={containerRef} py="50px" pt="80px" bg={bg} color={color} id="workExperience">
+      <Box className="gsap-bg-text gsap-bg-text-experience">EXPERIENCE</Box>
       <Flex direction="column" align="center" justify="center" mb={14}>
         <Heading
           fontSize={{ base: "3xl", md: "5xl" }}

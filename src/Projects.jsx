@@ -230,23 +230,43 @@ const Projects = () => {
   const containerRef = useRef(null);
 
   useGSAP(() => {
+    // Parallax background text scroll
+    gsap.to(".gsap-bg-text-projects", {
+      x: "15%",
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#Projects",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+      },
+    });
+
+    // 3D card reveals
     const cards = gsap.utils.toArray(".gsap-project-card");
     cards.forEach((card, index) => {
-      const xOffset = index % 2 === 0 ? -100 : 100;
+      const xOffset = index % 2 === 0 ? -60 : 60;
+      const rotateValue = index % 2 === 0 ? -3 : 3;
       gsap.fromTo(
         card,
         {
           opacity: 0,
           x: xOffset,
+          y: 40,
+          scale: 0.95,
+          rotate: rotateValue,
         },
         {
           opacity: 1,
           x: 0,
-          duration: 1.2,
-          ease: "power3.out",
+          y: 0,
+          scale: 1,
+          rotate: 0,
+          duration: 1.4,
+          ease: "power4.out",
           scrollTrigger: {
             trigger: card,
-            start: "top 85%",
+            start: "top 88%",
             toggleActions: "play none none none",
           },
         }
@@ -256,6 +276,7 @@ const Projects = () => {
 
   return (
     <Box ref={containerRef} py="30px" pt="80px" bg={bg} color={color} id="Projects">
+      <Box className="gsap-bg-text gsap-bg-text-projects">PROJECTS</Box>
       <Flex direction="column" align="center" justify="center" mb={14}>
         <Heading
           fontSize={{ base: "3xl", md: "5xl" }}

@@ -16,8 +16,35 @@ import WorkExperience from "./components/WorkExperience/WorkExperience";
 import ParticlesBackground from "./components/ParticlesBackground/ParticlesBackground";
 
 function App() {
+  useGSAP(() => {
+    gsap.to(".scroll-progress-bar", {
+      scaleX: 1,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "body",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+      },
+    });
+  });
+
   return (
     <div className="App">
+      <div
+        className="scroll-progress-bar"
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          height: "4px",
+          backgroundImage: "linear-gradient(to right, #3379b5, #fffb1c)",
+          zIndex: 9999,
+          width: "100%",
+          transformOrigin: "left",
+          transform: "scaleX(0)",
+        }}
+      />
       <ParticlesBackground />
       <Navbar />
       <Home />

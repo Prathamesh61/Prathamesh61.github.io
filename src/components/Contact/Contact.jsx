@@ -9,13 +9,29 @@ import {
   Flex,
   Heading,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useRef } from "react";
 import { Fade } from "react-awesome-reveal";
 import { trackEvent } from "../../util";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Contact = () => {
   const bg = useColorModeValue("white", "#10264f");
   const color = useColorModeValue("#10264f", "white");
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.to(".gsap-bg-text-contact", {
+      x: "15%",
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#Contact",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: 1,
+      },
+    });
+  }, { scope: containerRef });
 
   const contactImages =
     bg === "white"
@@ -55,7 +71,8 @@ const Contact = () => {
         ];
 
   return (
-    <Box bg={bg} color={color} pt="80px" pb={{ base: "60px", md: "80px" }} id="Contact">
+    <Box ref={containerRef} bg={bg} color={color} pt="80px" pb={{ base: "60px", md: "80px" }} id="Contact">
+      <Box className="gsap-bg-text gsap-bg-text-contact">CONTACT</Box>
       <Flex direction="column" align="center" justify="center" mb={10}>
         <Heading
           fontSize={{ base: "3xl", md: "5xl" }}

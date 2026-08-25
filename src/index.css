@@ -386,3 +386,48 @@ nav a:hover {
   color: #fff;
   text-decoration: none;
 }
+
+/* Custom GSAP scroll animations styling */
+.gsap-bg-text {
+  position: absolute;
+  font-size: 15vw;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(51, 121, 181, 0.06);
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+.chakra-ui-dark .gsap-bg-text,
+[data-theme="dark"] .gsap-bg-text {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.04);
+}
+
+.gsap-bg-text-projects {
+  top: 15%;
+  left: -10%;
+}
+
+.gsap-bg-text-experience {
+  top: 20%;
+  right: -10%;
+}
+
+.gsap-bg-text-contact {
+  top: 30%;
+  left: -10%;
+}
+
+/* Ensure parents of absolute outline texts are relative */
+#Projects, #workExperience, #Contact {
+  position: relative;
+  overflow: hidden;
+}
+
+.gsap-project-card, .gsap-experience-card {
+  position: relative;
+  z-index: 2;
+}
