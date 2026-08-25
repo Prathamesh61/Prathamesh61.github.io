@@ -399,8 +399,9 @@ nav a:hover {
   pointer-events: none;
   z-index: 0;
   white-space: nowrap;
-  left: 50%;
-  transform: translate(-50%, 0);
+  width: 100%;
+  text-align: center;
+  left: 0;
   opacity: 0.75;
 }
 

@@ -15,7 +15,7 @@ import { useGSAP } from "@gsap/react";
 import { BASE_RESUME_URL, trackEvent } from "../../util";
 
 function Home() {
-  const bg = useColorModeValue("#f8fafc", "#0b132b");
+  const bg = useColorModeValue("white", "#10264f");
   const color = useColorModeValue("#10264f", "white");
   const containerRef = useRef(null);
 

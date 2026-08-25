@@ -154,7 +154,7 @@ const WorkExperience = () => {
   useGSAP(() => {
     // Parallax background text scroll
     gsap.to(".gsap-bg-text-experience", {
-      x: "-15%",
+      x: 120,
       ease: "none",
       scrollTrigger: {
         trigger: containerRef.current,
@@ -392,7 +392,7 @@ const WorkExperience = () => {
                 >
               <Box
                 h="100%"
-                bg={useColorModeValue("rgba(255, 255, 255, 0.95)", "rgba(16, 38, 79, 0.55)")}
+                bg={useColorModeValue("rgba(255, 255, 255, 0.72)", "rgba(16, 38, 79, 0.45)")}
                 backdropFilter="blur(16px)"
                 borderRadius="2xl"
                 p={{ base: 5, md: 8 }}

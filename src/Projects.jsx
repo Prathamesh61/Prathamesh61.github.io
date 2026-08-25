@@ -225,7 +225,7 @@ const Projects = () => {
     */
   ];
 
-  const bg = useColorModeValue("#f8fafc", "#0b132b");
+  const bg = useColorModeValue("white", "#10264f");
   const color = useColorModeValue("#10264f", "white");
   const containerRef = useRef(null);
   const scrollRef = useRef(null);
@@ -233,7 +233,7 @@ const Projects = () => {
   useGSAP(() => {
     // Parallax background text scroll
     gsap.to(".gsap-bg-text-projects", {
-      x: "-10%",
+      x: -120,
       ease: "none",
       scrollTrigger: {
         trigger: containerRef.current,
@@ -341,7 +341,8 @@ const Projects = () => {
                 borderColor={color}
                 boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
                 borderRadius="15px"
-                bg={useColorModeValue("white", "#10264f")}
+                bg={useColorModeValue("rgba(255, 255, 255, 0.72)", "rgba(16, 38, 79, 0.45)")}
+                backdropFilter="blur(16px)"
                 w="100%"
               >
                 <Box overflowY="hidden" h={{ base: "180px", md: "220px" }}>

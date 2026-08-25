@@ -22,7 +22,7 @@ const Contact = () => {
 
   useGSAP(() => {
     gsap.to(".gsap-bg-text-contact", {
-      x: "15%",
+      x: -120,
       ease: "none",
       scrollTrigger: {
         trigger: containerRef.current,
