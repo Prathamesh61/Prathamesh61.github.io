@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 import Navbar from "./components/Navbar/Navbar";
+import CustomCursor from "./components/CustomCursor/CustomCursor";
 import Home from "./components/Home/Home";
 import TechStack from "./TechStack";
 import Projects from "./Projects";
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <div className="App">
+      <CustomCursor />
       <div
         className="scroll-progress-bar"
         style={{

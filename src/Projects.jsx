@@ -235,7 +235,7 @@ const Projects = () => {
       x: "15%",
       ease: "none",
       scrollTrigger: {
-        trigger: "#Projects",
+        trigger: containerRef.current,
         start: "top bottom",
         end: "bottom top",
         scrub: 1,

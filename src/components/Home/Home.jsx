@@ -83,10 +83,11 @@ function Home() {
         </Text>
 
         <Box className="gsap-fade-in gsap-typewriter">
-          <Text
+          <Box
             fontSize={["20px", "25px", "30px"]}
             pb={["20px", "25px", "30px"]}
             color={color}
+            fontWeight="semibold"
           >
             <TypewriterComponent
               options={{
@@ -99,7 +100,7 @@ function Home() {
                 loop: true,
               }}
             />
-          </Text>
+          </Box>
         </Box>
 
         <Box width={["100%", "80%", "60%"]} margin="auto" className="gsap-fade-in gsap-desc">

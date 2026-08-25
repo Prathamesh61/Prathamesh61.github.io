@@ -157,7 +157,7 @@ const WorkExperience = () => {
       x: "-15%",
       ease: "none",
       scrollTrigger: {
-        trigger: "#workExperience",
+        trigger: containerRef.current,
         start: "top bottom",
         end: "bottom top",
         scrub: 1,

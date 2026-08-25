@@ -25,7 +25,7 @@ const Contact = () => {
       x: "15%",
       ease: "none",
       scrollTrigger: {
-        trigger: "#Contact",
+        trigger: containerRef.current,
         start: "top bottom",
         end: "bottom top",
         scrub: 1,

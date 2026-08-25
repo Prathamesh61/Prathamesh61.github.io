@@ -431,3 +431,11 @@ nav a:hover {
   position: relative;
   z-index: 2;
 }
+
+/* Hide custom cursor on mobile and touch devices */
+@media (max-width: 1024px) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
