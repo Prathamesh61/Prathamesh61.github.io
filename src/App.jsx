@@ -16,6 +16,7 @@ import Statistics from "./components/Statistics/Statistics";
 import Skills from "./Skills";
 import WorkExperience from "./components/WorkExperience/WorkExperience";
 import ParticlesBackground from "./components/ParticlesBackground/ParticlesBackground";
+import AmbientGlow from "./components/AmbientGlow/AmbientGlow";
 
 function App() {
   useGSAP(() => {
@@ -49,6 +50,7 @@ function App() {
         }}
       />
       <ParticlesBackground />
+      <AmbientGlow />
       <Navbar />
       <Home />
       <WorkExperience />

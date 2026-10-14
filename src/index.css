@@ -440,3 +440,364 @@ nav a:hover {
     display: none !important;
   }
 }
+
+/* =========================================
+   HEAVY ANIMATIONS & ATMOSPHERIC EFFECTS
+   ========================================= */
+
+/* Shimmering Animated Gradient Text */
+.shimmer-gradient-text {
+  background: linear-gradient(
+    90deg,
+    #3379b5 0%,
+    #61dafb 25%,
+    #fffb1c 50%,
+    #61dafb 75%,
+    #3379b5 100%
+  );
+  background-size: 200% auto;
+  color: transparent !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  animation: textShimmer 4s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textShimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Ambient Floating Aurora Mesh Orbs */
+.ambient-aurora-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.aurora-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.35;
+  will-change: transform;
+}
+
+.chakra-ui-dark .aurora-orb,
+[data-theme="dark"] .aurora-orb {
+  opacity: 0.28;
+}
+
+.aurora-orb-1 {
+  width: 520px;
+  height: 520px;
+  top: -100px;
+  left: -80px;
+  background: radial-gradient(circle, #3379b5 0%, rgba(51, 121, 181, 0) 70%);
+  animation: auroraFloat1 18s ease-in-out infinite alternate;
+}
+
+.aurora-orb-2 {
+  width: 450px;
+  height: 450px;
+  top: 40%;
+  right: -100px;
+  background: radial-gradient(circle, #fffb1c 0%, rgba(255, 251, 28, 0) 70%);
+  animation: auroraFloat2 22s ease-in-out infinite alternate;
+}
+
+.aurora-orb-3 {
+  width: 600px;
+  height: 600px;
+  bottom: -150px;
+  left: 30%;
+  background: radial-gradient(circle, #0ea5e9 0%, rgba(14, 165, 233, 0) 70%);
+  animation: auroraFloat3 26s ease-in-out infinite alternate;
+}
+
+@keyframes auroraFloat1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(140px, 120px, 0) scale(1.15);
+  }
+  100% {
+    transform: translate3d(-60px, 200px, 0) scale(0.9);
+  }
+}
+
+@keyframes auroraFloat2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-180px, -90px, 0) scale(1.2);
+  }
+  100% {
+    transform: translate3d(-100px, 140px, 0) scale(0.85);
+  }
+}
+
+@keyframes auroraFloat3 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-120px, -150px, 0) scale(1.1);
+  }
+  100% {
+    transform: translate3d(100px, -60px, 0) scale(0.95);
+  }
+}
+
+/* Hologram Avatar Conic Border Ring */
+.avatar-hologram-wrapper {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  padding: 6px;
+  background: conic-gradient(
+    from 0deg,
+    #3379b5,
+    #fffb1c,
+    #00f2fe,
+    #a855f7,
+    #3379b5
+  );
+  animation: spinConic 6s linear infinite;
+  box-shadow: 0 0 35px rgba(51, 121, 181, 0.45);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.avatar-hologram-wrapper:hover {
+  box-shadow: 0 0 50px rgba(255, 251, 28, 0.55);
+}
+
+@keyframes spinConic {
+  0% {
+    filter: hue-rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* Counter-rotate inner content so image stays upright */
+.avatar-inner-stay {
+  animation: spinCounter 6s linear infinite;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #10264f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes spinCounter {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Floating Orbit Badges for Hero Avatar */
+.orbit-badge {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(16, 38, 79, 0.75);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 0 15px rgba(51, 121, 181, 0.35);
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  user-select: none;
+  cursor: default;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.orbit-badge:hover {
+  transform: scale(1.1) translateY(-4px) !important;
+  border-color: #fffb1c;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 251, 28, 0.5);
+}
+
+.badge-float-1 {
+  animation: floatOrbBadge1 5s ease-in-out infinite alternate;
+}
+
+.badge-float-2 {
+  animation: floatOrbBadge2 6s ease-in-out 1s infinite alternate;
+}
+
+.badge-float-3 {
+  animation: floatOrbBadge3 5.5s ease-in-out 0.5s infinite alternate;
+}
+
+.badge-float-4 {
+  animation: floatOrbBadge4 6.5s ease-in-out 1.5s infinite alternate;
+}
+
+@keyframes floatOrbBadge1 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-1deg);
+  }
+  100% {
+    transform: translate3d(0, -14px, 0) rotate(2deg);
+  }
+}
+
+@keyframes floatOrbBadge2 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(1deg);
+  }
+  100% {
+    transform: translate3d(0, -16px, 0) rotate(-2deg);
+  }
+}
+
+@keyframes floatOrbBadge3 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-2deg);
+  }
+  100% {
+    transform: translate3d(0, -12px, 0) rotate(1.5deg);
+  }
+}
+
+@keyframes floatOrbBadge4 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(2deg);
+  }
+  100% {
+    transform: translate3d(0, -15px, 0) rotate(-1.5deg);
+  }
+}
+
+/* Live Pulse Beacon */
+.pulse-beacon {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: beaconPulse 2s infinite;
+}
+
+@keyframes beaconPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.8);
+    transform: scale(0.95);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    transform: scale(1.1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    transform: scale(0.95);
+  }
+}
+
+/* Glowing Neon Button */
+.btn-neon-glow {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 1;
+}
+
+.btn-neon-glow::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #3379b5, #fffb1c, #00f2fe, #3379b5);
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: inherit;
+  animation: neonStream 8s linear infinite;
+}
+
+.btn-neon-glow:hover::before {
+  opacity: 0.9;
+}
+
+@keyframes neonStream {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Dynamic Sheen Glare across Cards on Hover */
+.card-glare-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-glare-effect::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card-glare-effect:hover::after {
+  opacity: 1;
+  animation: cardShine 1.2s ease forwards;
+}
+
+@keyframes cardShine {
+  0% {
+    transform: rotate(25deg) translate3d(-60%, -60%, 0);
+  }
+  100% {
+    transform: rotate(25deg) translate3d(60%, 60%, 0);
+  }
+}
+

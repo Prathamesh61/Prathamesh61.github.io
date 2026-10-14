@@ -434,58 +434,94 @@ const Projects = () => {
                 justifyContent="center"
                 alignItems="center"
                 gap="20px"
-                border="3px solid"
-                borderColor={color}
-                boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
-                borderRadius="15px"
-                bg={useColorModeValue("rgba(255, 255, 255, 0.72)", "rgba(16, 38, 79, 0.45)")}
-                backdropFilter="blur(16px)"
+                border="2px solid"
+                borderColor={useColorModeValue("rgba(16, 38, 79, 0.2)", "rgba(255, 255, 255, 0.2)")}
+                boxShadow={useColorModeValue("0 10px 30px rgba(0, 0, 0, 0.08)", "0 15px 35px rgba(0, 0, 0, 0.4)")}
+                borderRadius="20px"
+                bg={useColorModeValue("rgba(255, 255, 255, 0.8)", "rgba(16, 38, 79, 0.55)")}
+                backdropFilter="blur(20px)"
                 w="100%"
+                className="card-glare-effect"
+                transition="all 0.4s cubic-bezier(0.16, 1, 0.3, 1)"
+                _hover={{
+                  borderColor: "var(--PrimaryMainColorLight)",
+                  boxShadow: useColorModeValue(
+                    "0 20px 40px rgba(51, 121, 181, 0.25)",
+                    "0 20px 45px rgba(51, 121, 181, 0.4)"
+                  ),
+                }}
               >
-                <Box className="project-img-container" overflowY="hidden" h={{ base: "180px", md: "220px" }}>
+                <Box
+                  className="project-img-container"
+                  overflow="hidden"
+                  borderRadius="14px"
+                  h={{ base: "180px", md: "220px" }}
+                  border="1.5px solid"
+                  borderColor={useColorModeValue("rgba(16, 38, 79, 0.12)", "rgba(255, 255, 255, 0.15)")}
+                >
                   <Img
-                    border="3px solid"
-                    borderColor={color}
-                    borderRadius="10px"
                     width="100%"
                     height="100%"
                     objectFit="cover"
                     src={project.banner}
                     alt={project.title}
+                    transition="transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)"
+                    _hover={{ transform: "scale(1.06)" }}
                   />
                 </Box>
-                <VStack alignSelf="flex-start" spacing={3}>
-                  <Text fontSize={{ base: "xl", md: "2xl" }} color={color} fontWeight="bold" textAlign="center">
+                <VStack alignSelf="flex-start" spacing={3} w="100%">
+                  <Text
+                    fontSize={{ base: "xl", md: "2xl" }}
+                    color={color}
+                    fontWeight="bold"
+                    textAlign="center"
+                    letterSpacing="0.02em"
+                  >
                     {project.title}
                   </Text>
-                  <Text fontSize={{ base: "14px", md: "15px" }} align="center" noOfLines={3}>
+                  <Text fontSize={{ base: "14px", md: "15px" }} align="center" noOfLines={3} color={useColorModeValue("gray.600", "gray.300")}>
                     {project.description}
                   </Text>
                   <Flex
                     flexWrap="wrap"
                     justifyContent="center"
                     gap="10px"
-                    py="5px"
+                    py="6px"
                     alignSelf="center"
                   >
                     {project.tech.map((techItem, i) => {
                       const tech = TECH_ICONS[techItem.blue];
                       if (!tech) return null;
                       return (
-                        <Tooltip key={i} label={techItem.alt}>
-                          <span>
+                        <Tooltip key={i} label={techItem.alt} placement="top" hasArrow>
+                          <Box
+                            as="span"
+                            display="inline-flex"
+                            alignItems="center"
+                            justifyContent="center"
+                            p="7px"
+                            borderRadius="10px"
+                            bg={useColorModeValue("rgba(16, 38, 79, 0.05)", "rgba(255, 255, 255, 0.08)")}
+                            border="1px solid"
+                            borderColor={useColorModeValue("rgba(16, 38, 79, 0.1)", "rgba(255, 255, 255, 0.12)")}
+                            transition="all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)"
+                            _hover={{
+                              transform: "translateY(-3px) scale(1.1)",
+                              bg: useColorModeValue("rgba(51, 121, 181, 0.15)", "rgba(51, 121, 181, 0.25)"),
+                              borderColor: "var(--PrimaryMainColorLight)",
+                            }}
+                          >
                             <Icon
-                              className="hvr-pop"
                               as={tech.icon}
-                              boxSize="26px"
+                              boxSize="22px"
                               color={color}
                             />
-                          </span>
+                          </Box>
                         </Tooltip>
                       );
                     })}
                   </Flex>
-                  <HStack spacing={4}>
+                  <HStack spacing={4} pt={2} justify="center">
                     {project.github && (
                       <a
                         href={project.github}
@@ -500,9 +536,17 @@ const Projects = () => {
                         }
                       >
                         <Button
-                          className="hvr-underline-from-center"
                           leftIcon={<FaLink />}
                           size="sm"
+                          variant="outline"
+                          borderRadius="full"
+                          px={4}
+                          transition="all 0.25s ease"
+                          _hover={{
+                            transform: "translateY(-2px)",
+                            borderColor: "var(--PrimaryMainColorLight)",
+                            bg: useColorModeValue("gray.100", "whiteAlpha.100"),
+                          }}
                         >
                           Github
                         </Button>
@@ -525,11 +569,20 @@ const Projects = () => {
                             }
                           >
                             <Button
-                              className="hvr-underline-from-center"
-                              leftIcon={<FaLink />}
+                              leftIcon={<span className="pulse-beacon" style={{ width: "8px", height: "8px", marginRight: "2px" }} />}
+                              rightIcon={<FaLink />}
                               size="sm"
+                              colorScheme="blue"
+                              variant="solid"
+                              borderRadius="full"
+                              px={5}
+                              transition="all 0.25s ease"
+                              _hover={{
+                                transform: "translateY(-2px)",
+                                boxShadow: "0 6px 20px rgba(51, 121, 181, 0.5)",
+                              }}
                             >
-                              {el.name || "Live"}
+                              {el.name || "Live Demo"}
                             </Button>
                           </a>
                         );
