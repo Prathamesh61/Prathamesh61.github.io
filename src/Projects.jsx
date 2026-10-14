@@ -32,9 +32,16 @@ import {
   SiSocketdotio,
   SiJavascript,
   SiHtml5,
+  SiPython,
+  SiDjango,
+  SiPostgresql,
+  SiRedis,
+  SiTypescript,
+  SiDocker,
 } from "react-icons/si";
 
 // Banner imports
+import algoforgeBanner from "./res/other/algoforge-banner.jpg";
 import bskBanner from "./res/other/bsk-storybook-banner.png";
 import contractWalletBanner from "./res/other/contractWallet-banner.jpeg";
 import paragBanner from "./res/other/paragunifycrafts-banner.jpeg";
@@ -62,10 +69,39 @@ const TECH_ICONS = {
   "socket-io": { alt: "Socket-io", icon: SiSocketdotio },
   javascript: { alt: "Javascript", icon: SiJavascript },
   html: { alt: "HTML", icon: SiHtml5 },
+  python: { alt: "Python", icon: SiPython },
+  django: { alt: "Django", icon: SiDjango },
+  postgresql: { alt: "PostgreSQL", icon: SiPostgresql },
+  redis: { alt: "Redis", icon: SiRedis },
+  typescript: { alt: "TypeScript", icon: SiTypescript },
+  docker: { alt: "Docker", icon: SiDocker },
 };
 
 const Projects = () => {
   const projectsArr = [
+    {
+      title: "AlgoForge",
+      banner: algoforgeBanner,
+      description:
+        "AlgoForge is a full-stack DSA learning, visualization, and practice platform. It features an interactive algorithm visualizer lab with step-by-step timelines, an isolated multi-runtime code compiler sandbox (Python, JS, Java, C++), automated test-case evaluation, a 7-tier DAG roadmap, and gamified progress tracking.",
+      tech: [
+        { blue: "nextjs", yellow: "nextjs", alt: "Next.js" },
+        { blue: "typescript", yellow: "typescript", alt: "TypeScript" },
+        { blue: "django", yellow: "django", alt: "Django" },
+        { blue: "python", yellow: "python", alt: "Python" },
+        { blue: "postgresql", yellow: "postgresql", alt: "PostgreSQL" },
+        { blue: "redis", yellow: "redis", alt: "Redis" },
+        { blue: "tailwind", yellow: "tailwind", alt: "Tailwind CSS" },
+        { blue: "docker", yellow: "docker", alt: "Docker" },
+      ],
+      github: "https://github.com/Prathamesh61/algoforge-dsa",
+      live: [
+        {
+          link: "https://algoforge-dsa-eight.vercel.app/",
+          name: "",
+        },
+      ],
+    },
     {
       title: "Haire",
       banner: haireBanner,

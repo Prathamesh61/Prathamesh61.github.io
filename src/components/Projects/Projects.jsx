@@ -16,6 +16,7 @@ import { Fade } from "react-awesome-reveal";
 import { trackEvent } from "../../util";
 
 // Sample image import (recommend importing statically at the top)
+import algoforgeBanner from "../../res/other/algoforge-banner.jpg";
 import bskBanner from "../../res/other/bsk-storybook-banner.png";
 import contractWalletBanner from "../../res/other/contractWallet-banner.jpeg";
 import paragBanner from "../../res/other/paragunifycrafts-banner.jpeg";
@@ -36,6 +37,7 @@ const techIcons = {
     serverless: require("../../res/blue/serverless.png"),
     storybook: require("../../res/blue/storybook.png"),
     nextjs: require("../../res/blue/nextjs.png"),
+    typescript: require("../../res/blue/typescript.png"),
     tailwind: require("../../res/blue/tailwind-css.png"),
     "socket-io": require("../../res/blue/socket-io.png"),
   },
@@ -50,6 +52,7 @@ const techIcons = {
     serverless: require("../../res/yellow/serverless.png"),
     storybook: require("../../res/yellow/storybook.png"),
     nextjs: require("../../res/yellow/nextjs.png"),
+    typescript: require("../../res/yellow/typescript.png"),
     tailwind: require("../../res/yellow/tailwind-css.png"),
     "socket-io": require("../../res/yellow/socket-io.png"),
   },
@@ -61,6 +64,25 @@ const Projects = () => {
 
   const projectsArr = useMemo(
     () => [
+      {
+        title: "AlgoForge",
+        banner: algoforgeBanner,
+        description:
+          "AlgoForge is a full-stack DSA learning, visualization, and practice platform. It features an interactive algorithm visualizer lab with step-by-step timelines, an isolated multi-runtime code compiler sandbox (Python, JS, Java, C++), automated test-case evaluation, a 7-tier DAG roadmap, and gamified progress tracking.",
+        tech: [
+          { blue: "nextjs", yellow: "nextjs", alt: "Next.js" },
+          { blue: "typescript", yellow: "typescript", alt: "TypeScript" },
+          { blue: "tailwind", yellow: "tailwind", alt: "Tailwind CSS" },
+          { blue: "nodejs", yellow: "nodejs", alt: "Node.js" },
+        ],
+        github: "https://github.com/Prathamesh61/algoforge-dsa",
+        live: [
+          {
+            link: "https://algoforge-dsa-eight.vercel.app/",
+            name: "",
+          },
+        ],
+      },
       {
         title: "CricArabia",
         banner: cricarabia,
